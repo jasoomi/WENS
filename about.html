@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Learn more about WENS - West East North South, our mission, and our global network of knowledge sharing.">
+  <meta name="keywords" content="About WENS, WENS mission, West East North South, global community, learning network">
+  <meta name="author" content="jasoomi-stack">
+
+  <title>About - WENS</title>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About WENS - West East North South">
+  <meta property="og:description" content="Discover the story and mission behind WENS.">
+  <meta property="og:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/icons/og-image-v2.jpeg">
+  <meta property="og:url" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/about.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About WENS - West East North South">
+  <meta name="twitter:description" content="Discover the story and mission behind WENS.">
+  <meta name="twitter:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/icons/og-image-v2.jpeg">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    header {
+      background: linear-gradient(90deg, darkblue, red, teal);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    header:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      width: 26px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .menu-icon:hover span:nth-child(1) {
+      transform: translateX(3px);
+    }
+    .menu-icon:hover span:nth-child(2) {
+      transform: translateX(-3px);
+    }
+    .drawer {
+      position: fixed; 
+      top: 0; 
+      left: -320px; 
+      width: 320px; 
+      height: 100vh;
+      background: #fff; 
+      transition: left 0.45s ease; 
+      z-index: 210; 
+      padding-top: 1.5rem;
+    }
+    .drawer.open { left: 0; }
+    .drawer a {
+      display: block; 
+      margin: 10px auto; 
+      padding: 1rem; 
+      text-align: center;
+      text-decoration: none; 
+      color: #333; 
+      font-weight: bold;
+      background: #eee;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .drawer a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+    .overlay {
+      position: fixed; 
+      inset: 0; 
+      background: rgba(0,0,0,0.35);
+      opacity: 0; 
+      pointer-events: none; 
+      transition: opacity 0.35s ease; 
+      z-index: 200;
+    }
+    .overlay.visible { 
+      opacity: 1; 
+      pointer-events: auto; 
+    }
+    main {
+      padding: 1rem;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -8px -8px 16px rgba(255,255,255,0.4);
+      margin-top: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    main:hover {
+      transform: translateY(-4px);
+      box-shadow: 12px 12px 24px rgba(0,0,0,0.25);
+    }
+    .contact-container {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: silver; /* Updated color */
+      border-radius: 12px;
+      box-shadow: 8px 8px 16px rgba(0,0,0,0.2), -8px -8px 16px rgba(255,255,255,0.4);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .contact-container:hover {
+      transform: translateY(-3px);
+      box-shadow: 12px 12px 24px rgba(0,0,0,0.25);
+    }
+    .contact-container img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 1rem auto 0;
+      border: 3px solid teal;
+      transition: transform 0.3s ease;
+    }
+    .contact-container img:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About WENS</h1>
+    <div class="menu-icon" id="menuIcon">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <nav class="drawer" id="drawer">
+    <a href="index.html">🏠 Home</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <h2>About WENS</h2>
+    <p>WENS (West, East, North, South) is your hub for global knowledge, news, and updates.</p>
+    <p>We provide insights into the latest movies, applications, games, world news, trade, and much more.</p>
+    <p>Our mission is to keep you informed and prepared for every opportunity in the modern world.</p>
+
+    <div class="contact-container">
+      <h3>Contact Information</h3>
+      <p><strong>Email:</strong> lizardbaloch@gmail.com</p>
+      <p><strong>WhatsApp:</strong> +92 336 8265030</p>
+      <img src="my-picture.jpg" alt="Your Picture">
+    </div>
+  </main>
+
+  <script>
+    const menuIcon = document.getElementById('menuIcon');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+
+    menuIcon.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+      overlay.classList.toggle('visible');
+    });
+
+    overlay.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      overlay.classList.remove('visible');
+    });
+  </script>
+</body>
+</html>

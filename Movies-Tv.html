@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movies & TV Shows - WENS</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Movies & TV Shows with WENS - Discover and explore your favorite films and series.">
+  <meta name="keywords" content="movies, tv shows, wens, entertainment, watch">
+  <meta name="author" content="jasoomi-stack">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Movies & TV Shows - WENS">
+  <meta property="og:description" content="Discover and explore your favorite movies and TV series with WENS.">
+  <meta property="og:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/icons/og-image-v2.jpeg">
+  <meta property="og:url" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/movies-tv.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Movies & TV Shows - WENS">
+  <meta name="twitter:description" content="Discover and explore your favorite movies and TV series with WENS.">
+  <meta name="twitter:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/icons/og-image-v2.jpeg">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#004d40">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      transition: background-color 0.3s ease;
+    }
+    header {
+      background: linear-gradient(90deg, #004d40, #001f5c);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      max-width: 95%;
+      margin: 1rem auto;
+    }
+    header svg {
+      height: 60px;
+      width: 60px;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      animation: spin-slow 10s linear infinite;
+    }
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+    }
+    .search-bar input {
+      width: 90%;
+      padding: 0.7rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(145deg, #ffffff, #d1d1d1);
+      border-radius: 10px;
+      padding: 8px 14px;
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.2),
+                  -4px -4px 8px rgba(255,255,255,0.6);
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0 0 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+    }
+    .back-home:hover {
+      transform: translateY(-3px);
+      box-shadow: 6px 6px 12px rgba(0,0,0,0.25),
+                  -6px -6px 12px rgba(255,255,255,0.7);
+    }
+    .back-home svg {
+      width: 18px;
+      height: 18px;
+      fill: #333;
+    }
+
+    main {
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .movie-card {
+      background: #fff3e0;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem 0;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .movie-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25),
+                  inset 0 3px 6px rgba(255, 255, 255, 0.4);
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" fill="url(#grad)">
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ff6347;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <circle cx="248" cy="248" r="240" />
+    </svg>
+    <h1>Movies & TV Shows</h1>
+  </header>
+
+  <a href="index.html" class="back-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+    Back Home
+  </a>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search Movies & TV Shows...">
+  </div>
+
+  <main>
+    <h2>Featured Titles</h2>
+    <div class="movie-card">
+      <h3>The Great Adventure</h3>
+      <p>A thrilling journey into the unknown.</p>
+    </div>
+    <div class="movie-card">
+      <h3>City Lights</h3>
+      <p>A heartwarming romantic comedy set in the big city.</p>
+    </div>
+    <div class="movie-card">
+      <h3>Planet Earth Series</h3>
+      <p>A breathtaking documentary series exploring our planet.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 WENS — Built with SPCK
+  </footer>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+      const filter = this.value.toLowerCase();
+      const cards = document.querySelectorAll('.movie-card');
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

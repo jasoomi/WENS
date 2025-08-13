@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Science & Technology Education</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #fff;
+}
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+.section {
+    padding: 30px 20px;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    transition: box-shadow 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 0 30px rgba(0,255,255,0.5);
+}
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.card h3 {
+    margin-top: 0;
+    color: #0ff;
+}
+.card p, .card ul {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ccc;
+}
+/* Collapsible content */
+.card.collapsible .content {
+    display: none;
+    padding-top: 10px;
+}
+.card.collapsible.active .content {
+    display: block;
+}
+.card.collapsible {
+    cursor: pointer;
+}
+
+/* 3D effect for header cards */
+.header-card {
+    background-color: #222;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.header-card:hover {
+    transform: rotateY(15deg) rotateX(5deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.6);
+}
+
+/* Section colors */
+.section.physics { background-color: rgba(0,255,255,0.05); }
+.section.chemistry { background-color: rgba(255,0,255,0.05); }
+.section.biology { background-color: rgba(0,255,0,0.05); }
+.section.math { background-color: rgba(255,255,0,0.05); }
+.section.cs { background-color: rgba(255,128,0,0.05); }
+.section.digital { background-color: rgba(0,128,255,0.05); }
+</style>
+</head>
+<body>
+
+<h1>Complete Science & Technology Education</h1>
+
+<!-- Physics Section -->
+<div class="section physics">
+    <h2>Physics</h2>
+    <div class="cards">
+        <div class="card header-card">
+            <h3>Physics</h3>
+            <p>Physics is the natural science that studies matter, energy, and the fundamental forces of the universe.</p>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Newton%27s_laws_of_motion.png" alt="Mechanics">
+            <h3>Mechanics</h3>
+            <div class="content">
+                <p>Mechanics studies motion and forces.</p>
+                <ul>
+                    <li>Kinematics: motion without forces.</li>
+                    <li>Dynamics: forces causing motion.</li>
+                    <li>Statics: forces in equilibrium.</li>
+                    <li>Formulas: F=ma, v=u+at, s=ut+½at²</li>
+                    <li>Applications: engineering, robotics, vehicles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Thermodynamics_graph.png" alt="Thermodynamics">
+            <h3>Thermodynamics</h3>
+            <div class="content">
+                <p>Thermodynamics studies heat, energy, and temperature.</p>
+                <ul>
+                    <li>First Law: ΔU = Q - W</li>
+                    <li>Second Law: Entropy always increases</li>
+                    <li>Third Law: Absolute zero entropy</li>
+                    <li>Applications: engines, refrigerators, climate science</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Electromagnetism.png" alt="Electromagnetism">
+            <h3>Electromagnetism</h3>
+            <div class="content">
+                <p>Studies electric and magnetic fields.</p>
+                <ul>
+                    <li>Formulas: F = q(E + v × B)</li>
+                    <li>Maxwell's equations describe fields.</li>
+                    <li>Applications: motors, generators, electronics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chemistry Section -->
+<div class="section chemistry">
+    <h2>Chemistry</h2>
+    <div class="cards">
+        <div class="card header-card">
+            <h3>Chemistry</h3>
+            <p>Chemistry studies matter, its composition, structure, properties, and reactions.</p>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Chemistry_symbols.png" alt="Organic Chemistry">
+            <h3>Organic Chemistry</h3>
+            <div class="content">
+                <p>Study of carbon-containing compounds.</p>
+                <ul>
+                    <li>Applications: medicines, plastics, fuels</li>
+                    <li>Formulas: CH₄, C₂H₆O, C₆H₁₂O₆</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Periodic_table_large.png" alt="Inorganic Chemistry">
+            <h3>Inorganic Chemistry</h3>
+            <div class="content">
+                <p>Study of non-carbon compounds.</p>
+                <ul>
+                    <li>Applications: materials, catalysts, pigments</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Chemical_bonds.png" alt="Physical Chemistry">
+            <h3>Physical Chemistry</h3>
+            <div class="content">
+                <p>Study of energy and matter interactions.</p>
+                <ul>
+                    <li>Formulas: PV=nRT, ΔG=ΔH-TΔS</li>
+                    <li>Applications: reaction kinetics, thermodynamics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Biology Section -->
+<div class="section biology">
+    <h2>Biology</h2>
+    <div class="cards">
+        <div class="card header-card">
+            <h3>Biology</h3>
+            <p>Biology studies living organisms, their structure, function, growth, and evolution.</p>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/DNA_chemical_structure.png" alt="Genetics">
+            <h3>Genetics</h3>
+            <div class="content">
+                <p>Study of genes, heredity, and variation.</p>
+                <ul>
+                    <li>Formulas: DNA base pairing A=T, C≡G</li>
+                    <li>Applications: medicine, agriculture</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Cell_diagram.png" alt="Cell Biology">
+            <h3>Cell Biology</h3>
+            <div class="content">
+                <p>Study of cell structure and functions.</p>
+                <ul>
+                    <li>Applications: biotechnology, disease research</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Ecosystem.jpg" alt="Ecology">
+            <h3>Ecology</h3>
+            <div class="content">
+                <p>Study of organisms and environment interactions.</p>
+                <ul>
+                    <li>Applications: conservation, environmental management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mathematics Section -->
+<div class="section math">
+    <h2>Mathematics</h2>
+    <div class="cards">
+        <div class="card header-card">
+            <h3>Mathematics</h3>
+            <p>Study of numbers, quantities, shapes, and patterns.</p>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Mathematics_symbols.png" alt="Algebra">
+            <h3>Algebra</h3>
+            <div class="content">
+                <p>Study of symbols and rules for manipulating them.</p>
+                <ul>
+                    <li>Formulas: a²+b²=c², ax+b=0</li>
+                    <li>Applications: solving equations, modeling</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Calculus_graph.png" alt="Calculus">
+            <h3>Calculus</h3>
+            <div class="content">
+                <p>Study of change (derivatives) and accumulation (integrals).</p>
+                <ul>
+                    <li>Formulas: d/dx[f(x)], ∫f(x)dx</li>
+                    <li>Applications: physics, engineering, economics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Computer Science Section -->
+<div class="section cs">
+    <h2>Computer Science</h2>
+    <div class="cards">
+        <div class="card header-card">
+            <h3>Computer Science</h3>
+            <p>Studies algorithms, computation, and information processing systems.</p>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Flowchart_example.png" alt="Algorithms">
+            <h3>Algorithms</h3>
+            <div class="content">
+                <p>Step-by-step computational procedures.</p>
+                <ul>
+                    <li>Applications: software development, AI</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Database-modeling-entity-relationship-diagram.png" alt="Databases">
+            <h3>Databases</h3>
+            <div class="content">
+                <p>Organizing and managing structured data.</p>
+                <ul>
+                    <li>Applications: websites, banking, big data</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Digital/Technology Section -->
+<div class="section digital">
+    <h2>Digital & Technology</h2>
+    <div class="cards">
+        <div class="card header-card">
+            <h3>Digital Technology</h3>
+            <p>Study of electronic systems, digital devices, and modern computing applications.</p>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/IoT.png" alt="IoT">
+            <h3>Internet of Things (IoT)</h3>
+            <div class="content">
+                <p>Network of interconnected devices exchanging data.</p>
+                <ul>
+                    <li>Applications: smart homes, wearables, automation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card collapsible">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Artificial-intelligence.png" alt="AI">
+            <h3>Artificial Intelligence</h3>
+            <div class="content">
+                <p>Simulation of human intelligence in machines.</p>
+                <ul>
+                    <li>Applications: chatbots, autonomous vehicles, prediction systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Collapsible cards
+const collapsibles = document.querySelectorAll('.card.collapsible');
+collapsibles.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('active');
+    });
+});
+</script>
+
+</body>
+</html>

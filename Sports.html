@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports - WENS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #004d40, #001f5c);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(145deg, #ffffff, #d1d1d1);
+      border-radius: 10px;
+      padding: 8px 14px;
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.2),
+                  -4px -4px 8px rgba(255,255,255,0.6);
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0 0 15px;
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+    }
+    .back-home svg {
+      width: 18px;
+      height: 18px;
+      fill: #333;
+    }
+    main {
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 20px;
+    }
+    .silver-container {
+      background: #c0c0c0;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    }
+    .lesson-card {
+      background: #d9fdd3;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem 0;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .lesson-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25),
+                  inset 0 3px 6px rgba(255, 255, 255, 0.4);
+    }
+    /* 3D Green Button */
+    .green-btn {
+      display: inline-block;
+      background: linear-gradient(145deg, #28a745, #218838);
+      color: white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.25),
+                  -5px -5px 10px rgba(255,255,255,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .green-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 7px 7px 14px rgba(0,0,0,0.3),
+                  -7px -7px 14px rgba(255,255,255,0.35);
+    }
+    .green-btn:active {
+      transform: translateY(2px);
+      box-shadow: inset 3px 3px 6px rgba(0,0,0,0.3),
+                  inset -3px -3px 6px rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sports</h1>
+</header>
+
+<!-- Back Home Button -->
+<a href="javascript:history.back()" class="back-home">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M15 18l-6-6 6-6"/>
+  </svg>
+  Back Home
+</a>
+
+<main>
+  <h2>Sports Categories</h2>
+  <div class="silver-container">
+
+    <div class="lesson-card" style="text-align:center;">
+      <h3>Football</h3>
+      <p>Latest news, scores, and updates from the world of football.</p>
+      <a href="football-v2.html" class="green-btn">Go to Football</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Basketball</h3>
+      <p>Stay updated on NBA, EuroLeague, and global basketball events.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Cricket</h3>
+      <p>Live scores, match results, and cricket news from around the globe.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Tennis</h3>
+      <p>Grand Slam highlights, rankings, and tennis world updates.</p>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Olympics</h3>
+      <p>Follow the Olympic Games with news, results, and athlete stories.</p>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

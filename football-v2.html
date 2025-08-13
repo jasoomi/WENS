@@ -1,0 +1,159 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>Football Updates - WENS</title>    <!-- SEO -->    <meta name="description" content="Latest football news, match updates, and highlights from WENS Sports."/>  
+  <meta name="keywords" content="football news, football updates, soccer scores, WENS Sports"/>  
+  <meta name="author" content="jasoomi-stack"/>    <!-- Favicons -->    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>  
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>  
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>  
+  <link rel="manifest" href="manifest.json"/>    <!-- OG Tags -->    <meta property="og:title" content="Football Updates - WENS"/>  
+  <meta property="og:description" content="Stay updated with the latest football scores, transfers, and highlights."/>  
+  <meta property="og:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/icons/og-image-v2.jpeg"/>  
+  <meta property="og:url" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/football.html"/>  
+  <meta property="og:type" content="website"/>    <!-- Theme Color -->    <meta name="theme-color" content="#004d40"/>    <style>  
+    body {  
+      font-family: Arial, sans-serif;  
+      margin: 0;  
+      padding: 0;  
+    }  
+    header {  
+      background: linear-gradient(90deg, #004d40, #001f5c);  
+      color: white;  
+      padding: 1rem;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      gap: 10px;  
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);  
+      border-radius: 12px;  
+      max-width: 95%;  
+      margin: 1rem auto;  
+      position: sticky;  
+      top: 0;  
+      z-index: 100;  
+    }  
+    header svg {  
+      height: 50px;  
+      width: 50px;  
+      animation: spin-slow 10s linear infinite;  
+    }  
+    @keyframes spin-slow {  
+      from { transform: rotate(0deg); }  
+      to { transform: rotate(360deg); }  
+    }  
+    .back-home {  
+      display: inline-flex;  
+      align-items: center;  
+      gap: 8px;  
+      background: linear-gradient(145deg, #ffffff, #d1d1d1);  
+      border-radius: 10px;  
+      padding: 8px 14px;  
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.2),  
+                  -4px -4px 8px rgba(255,255,255,0.6);  
+      font-weight: bold;  
+      text-decoration: none;  
+      color: #333;  
+      margin: 10px 0 0 15px;  
+      transition: transform 0.2s ease, box-shadow 0.2s ease;  
+      position: sticky;  
+      top: 90px;  
+      z-index: 999;  
+    }  
+    .back-home:hover {  
+      transform: translateY(-3px);  
+      box-shadow: 6px 6px 12px rgba(0,0,0,0.25),  
+                  -6px -6px 12px rgba(255,255,255,0.7);  
+    }  
+    .search-bar {  
+      max-width: 500px;  
+      margin: 20px auto;  
+      display: flex;  
+      align-items: center;  
+      gap: 10px;  
+      padding: 8px 14px;  
+      border-radius: 12px;  
+      background: #f1f1f1;  
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);  
+    }  
+    .search-bar input {  
+      flex: 1;  
+      border: none;  
+      background: transparent;  
+      outline: none;  
+      font-size: 1rem;  
+    }  
+    .card {  
+      background: #c0c0c0;  
+      padding: 1rem;  
+      margin: 1rem auto;  
+      border-radius: 12px;  
+      max-width: 90%;  
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);  
+      animation: slideUp 0.5s ease;  
+    }  
+    .card h3 {  
+      margin-top: 0;  
+    }  
+    @keyframes slideUp {  
+      from { opacity: 0; transform: translateY(20px); }  
+      to { opacity: 1; transform: translateY(0); }  
+    }  
+    footer {  
+      text-align: center;  
+      padding: 1rem;  
+      background: #f4f4f4;  
+      font-size: 0.9rem;  
+      color: #555;  
+    }  
+  </style>  </head>  
+<body>    <header>  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" fill="url(#grad)">  
+      <defs>  
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">  
+          <stop offset="0%" style="stop-color:#1e90ff;stop-opacity:1" />  
+          <stop offset="100%" style="stop-color:#32cd32;stop-opacity:1" />  
+        </linearGradient>  
+      </defs>  
+      <circle cx="248" cy="248" r="240" />  
+    </svg>  
+    <h1>Football Updates</h1>  
+  </header>    <a href="javascript:history.back()" class="back-home">  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">  
+      <path d="M15 18l-6-6 6-6" fill="none" stroke="#333" stroke-width="2"/>  
+    </svg>  
+    Back  
+  </a>    <div class="search-bar">  
+    <input type="text" id="searchInput" placeholder="Search football updates...">  
+  </div>    <main>  
+    <div class="card">  
+      <h3>Champions League Final</h3>  
+      <p>Real Madrid faces Manchester City in the UEFA Champions League final. Kickoff at 20:00 GMT.</p>  
+    </div>  
+    <div class="card">
+  <h3>Transfer News</h3>
+  <p>AC Milan are in advanced talks with Manchester United over striker Rasmus Højlund, valued at around £40 million. United prefer a permanent move, while Milan are pushing for a loan with a buy option. Negotiations on the deal structure are ongoing.</p>
+</div>
+    <div class="card">  
+      <h3>Premier League Update</h3>  
+      <p>Arsenal remains at the top of the table after a 2-1 win against Chelsea.</p>  
+    </div>  
+    <div class="card">  
+      <h3>World Cup Qualifiers</h3>  
+      <p>Brazil secures a spot in the 2026 World Cup after defeating Argentina.</p>  
+    </div>  
+  </main>    <footer>  
+    &copy; 2025 WENS — Football Updates  
+  </footer>    <script>  
+    const searchInput = document.getElementById('searchInput');  
+    const cards = document.querySelectorAll('.card');  
+  
+    searchInput.addEventListener('input', function() {  
+      const filter = this.value.toLowerCase();  
+      cards.forEach(card => {  
+        const text = card.innerText.toLowerCase();  
+        card.style.display = text.includes(filter) ? '' : 'none';  
+      });  
+    });  
+  </script>  </body>  
+</html>

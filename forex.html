@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forex Currencies</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #004d40, #001f5c);
+    border-radius: 12px;
+    margin: 10px;
+  }
+  header h1 {
+    margin: 0;
+    color: white;
+  }
+  .search-bar {
+    max-width: 400px;
+    margin: 15px auto;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  .card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .card:hover { transform: translateY(-5px); }
+  .card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  .card h3 { color: #00ff88; }
+  /* Popup */
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: silver;
+    color: black;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,255,0,0.7);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    display: none;
+    z-index: 1000;
+  }
+  .popup h3 { margin-top: 0; }
+  .popup button {
+    background: linear-gradient(145deg, #00ff88, #00cc6a);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .close-popup {
+    background: red;
+    color: white;
+    margin-right: 10px;
+  }
+  .back-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 8px 14px;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn">⬅ Back</a>
+  <h1>Forex Currencies</h1>
+  <input type="text" id="searchInput" class="search-bar" placeholder="Search currency...">
+</header>
+
+<div class="cards-container">
+  <div class="card" data-title="EUR/USD" data-desc="Euro to US Dollar exchange rate trends." data-link="EUR-USD.html">
+    <img src="images/forex/eurusd.png" alt="EUR/USD">
+    <h3>EUR/USD</h3>
+  </div>
+  <div class="card" data-title="USD/JPY" data-desc="US Dollar to Japanese Yen market updates." data-link="USD-JPY.html">
+    <img src="images/forex/usdjpy.png" alt="USD/JPY">
+    <h3>USD/JPY</h3>
+  </div>
+  <div class="card" data-title="GBP/USD" data-desc="British Pound to US Dollar price movements." data-link="GBP-USD.html">
+    <img src="images/forex/gbpusd.png" alt="GBP/USD">
+    <h3>GBP/USD</h3>
+  </div>
+  <div class="card" data-title="USD/CHF" data-desc="US Dollar to Swiss Franc latest data." data-link="USD-CHF.html">
+    <img src="images/forex/usdchf.png" alt="USD/CHF">
+    <h3>USD/CHF</h3>
+  </div>
+  <div class="card" data-title="AUD/USD" data-desc="Australian Dollar to US Dollar updates." data-link="AUD-USD.html">
+    <img src="images/forex/audusd.png" alt="AUD/USD">
+    <h3>AUD/USD</h3>
+  </div>
+  <div class="card" data-title="USD/CAD" data-desc="US Dollar to Canadian Dollar trends." data-link="USD-CAD.html">
+    <img src="images/forex/usdcad.png" alt="USD/CAD">
+    <h3>USD/CAD</h3>
+  </div>
+  <div class="card" data-title="NZD/USD" data-desc="New Zealand Dollar to US Dollar rate." data-link="NZD-USD.html">
+    <img src="images/forex/nzdusd.png" alt="NZD/USD">
+    <h3>NZD/USD</h3>
+  </div>
+  <div class="card" data-title="EUR/JPY" data-desc="Euro to Japanese Yen price updates." data-link="EUR-JPY.html">
+    <img src="images/forex/eurjpy.png" alt="EUR/JPY">
+    <h3>EUR/JPY</h3>
+  </div>
+  <div class="card" data-title="GBP/JPY" data-desc="British Pound to Japanese Yen movement." data-link="GBP-JPY.html">
+    <img src="images/forex/gbpjpy.png" alt="GBP/JPY">
+    <h3>GBP/JPY</h3>
+  </div>
+  <div class="card" data-title="EUR/GBP" data-desc="Euro to British Pound exchange changes." data-link="EUR-GBP.html">
+    <img src="images/forex/eurgbp.png" alt="EUR/GBP">
+    <h3>EUR/GBP</h3>
+  </div>
+</div>
+
+<div class="popup" id="popup">
+  <h3 id="popupTitle"></h3>
+  <p id="popupDesc"></p>
+  <button class="close-popup" id="closePopup">Close</button>
+  <button id="readMoreBtn">READ MORE</button>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const popup = document.getElementById('popup');
+  const popupTitle = document.getElementById('popupTitle');
+  const popupDesc = document.getElementById('popupDesc');
+  const closePopup = document.getElementById('closePopup');
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  let currentLink = '';
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      popupTitle.textContent = card.dataset.title;
+      popupDesc.textContent = card.dataset.desc;
+      currentLink = card.dataset.link;
+      popup.style.display = 'block';
+    });
+  });
+
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  readMoreBtn.addEventListener('click', () => {
+    if (currentLink) {
+      window.location.href = currentLink;
+    }
+  });
+
+  // Search Functionality
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const searchValue = this.value.toLowerCase();
+    cards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      card.style.display = title.includes(searchValue) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
