@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GBP/USD</title>
+<meta name="description" content="GBP/USD currency pair — exchange rate updates and market overview.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004d40">
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -24,8 +27,24 @@ body {
 }
 .header-card:hover { transform: translateY(-5px); }
 .crypto-logo { width: 100px; height: 100px; object-fit: contain; }
-h1 { color: #00ff88; }
-p { color: #ccc; }
+h1 { color: #00ff88; margin: 10px 0; }
+p { color: #ccc; line-height: 1.5; }
+.btn-3d {
+  display: inline-block;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px #00994d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px #00994d;
+}
 </style>
 </head>
 <body>
@@ -35,6 +54,17 @@ p { color: #ccc; }
   <h1>GBP/USD</h1>
   <p>Known as “Cable,” this major currency pair tracks the exchange rate between the British Pound Sterling and the US Dollar.</p>
 </div>
+
+<a href="forex.html" class="btn-3d">⬅ Back</a>
+
+<script>
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log('Service Worker Registered for GBP/USD'))
+    .catch(err => console.error('SW Registration Failed:', err));
+}
+</script>
 
 </body>
 </html>

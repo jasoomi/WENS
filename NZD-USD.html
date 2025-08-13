@@ -4,6 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>NZD/USD</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00ff88">
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -77,7 +82,6 @@
 <body>
 
   <div class="header-card" role="region" aria-label="NZD/USD overview">
-    <!-- replace src with your local logo path if needed -->
     <img src="../images/forex/nzdusd.png" alt="NZD/USD logo" class="pair-logo" />
     <h1>NZD/USD</h1>
 
@@ -88,9 +92,20 @@
 
     <div class="meta">Major influences: Dairy and agricultural exports, interest rate differentials, risk sentiment.</div>
 
-    <!-- Back to forex index -->
     <a class="btn-3d" href="../forex.html" title="Back to Forex">⬅ Back</a>
   </div>
 
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+          console.log('ServiceWorker registered with scope:', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed:', err);
+        });
+      });
+    }
+  </script>
 </body>
 </html>

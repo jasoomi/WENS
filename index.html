@@ -1,129 +1,120 @@
-<!DOCTYPE html>
-<html lang="en"> 
-<head>    
-<link rel="manifest" href="manifest.json">            <meta name="theme-color" content="#C0C0C0">          
-  <meta charset="UTF-8" />          
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>          
-  <title>WENS (West, East, North, South) — Home</title>    <!-- SEO Meta Tags -->    <meta name="description" content="WENS (West, East, North, South) — Your journey to mastering knowledge starts here. Explore resources, lessons, and daily inspiration.">          
-  <meta name="keywords" content="WENS, West East North South, learning, resources, daily quotes, education">          
-  <meta name="author" content="JASOOMI">    <!-- Open Graph / Facebook -->    <meta property="og:title" content="WENS (West, East, North, South) — Home">          
-  <meta property="og:description" content="Your journey to mastering knowledge starts here. Explore resources, lessons, and daily inspiration.">          
-  <meta property="og:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/og-image-v2.jpeg">          
-  <meta property="og:url" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/">          
-  <meta property="og:type" content="website">    <!-- Twitter -->    <meta name="twitter:card" content="summary_large_image">          
-  <meta name="twitter:title" content="WENS (West, East, North, South) — Home">          
-  <meta name="twitter:description" content="Your journey to mastering knowledge starts here. Explore resources, lessons, and daily inspiration.">          
-  <meta name="twitter:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/og-image-v2.jpeg">    <style>          
-   body {          
-  font-family: Arial, sans-serif;          
-  margin: 0;          
-  padding: 0;          
-  overflow-x: hidden;          
-  background-color: silver;          
-  transition: background 0.4s ease, color 0.4s ease;          
-}          
-    body.dark { background: #1e1e1e; color: #f0f0f0; }          
-    body.dark header { background: linear-gradient(90deg, #222, #444); }          
-    body.dark .card,          
-    body.dark #contact {          
-      background: #2b2b2b;          
-      color: #f0f0f0;          
-      box-shadow: 0 3px 10px rgba(255,255,255,0.05);          
-    } 
-    header {      
-background: linear-gradient(90deg, #00008B, #8B0000, #008080);      
-color: white;      
-padding: 2rem 2rem;      
-display: flex;      
-align-items: center;      
-justify-content: space-between;      
-gap: 10px;      
-border-radius: 12px;      
-max-width: 95%;      
-margin: 1rem auto;      
-box-shadow: 8px 8px 16px rgba(0,0,0,0.25),      
--8px -8px 16px rgba(255,255,255,0.4),      
-inset 0 2px 4px rgba(255,255,255,0.3);      
-position: relative;      
-transition: transform 0.3s ease, box-shadow 0.3s ease;      
-opacity: 0;      
-transform: translateY(-20px);      
-}      
-header.show {      
-opacity: 1;      
-transform: translateY(0);      
-transition: all 0.8s ease-out;      
-}      
-header:hover {      
-transform: translateY(-6px) scale(1.02);      
-box-shadow: 10px 10px 20px rgba(0,0,0,0.3),      
--10px -10px 20px rgba(255,255,255,0.5),      
-inset 0 3px 6px rgba(255,255,255,0.4);      
-}  .logo-container { display: flex; align-items: center; gap: 10px; }    
-.logo-container svg { height: 60px; width: 60px; filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4)); }    
-.logo-container h1 { font-size: 1.4rem; margin: 0; font-weight: bold; }    .card {
-border-radius: 8px;
-padding: 1rem;
-margin: 1rem auto;
-max-width: 95%;
-background: white;
-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-opacity: 0;
-transform: translateY(30px);
-}
-.card.show {
-opacity: 1;
-transform: translateY(0);
-transition: all 0.8s ease-out;
-}
-.silver-3d {
-background: linear-gradient(145deg, #dcdcdc, #ffffff);
-border-radius: 14px;
-box-shadow: 10px 10px 20px rgba(0,0,0,0.25),
--10px -10px 20px rgba(255,255,255,0.7),
-inset 0 1px 2px rgba(255,255,255,0.4);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.silver-3d:hover {
-transform: translateY(-6px) scale(1.02);
-box-shadow: 12px 12px 25px rgba(0,0,0,0.3),
--12px -12px 25px rgba(255,255,255,0.8),
-inset 0 2px 4px rgba(255,255,255,0.5);
-}
-
-.card.silver-3d {
-margin-left: auto;
-margin-right: auto;
-width: calc(100% - 40px);
-}
-
-.btn-3d-green {
-background: linear-gradient(145deg, #4caf50, #2e7d32);
-color: white;
-border: none;
-padding: 10px 20px;
-font-size: 1rem;
-border-radius: 8px;
-cursor: pointer;
-box-shadow: 4px 4px 8px rgba(0,0,0,0.3),
--4px -4px 8px rgba(255,255,255,0.3);
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn-3d-green:hover {
-transform: translateY(-3px);
-box-shadow: 6px 6px 12px rgba(0,0,0,0.4),
--6px -6px 12px rgba(255,255,255,0.4);
-}
-
-#contact {
-border-radius: 8px;
-padding: 1rem;
-margin: 1rem auto;
-max-width: 95%;
-background: white;
-}
-
-.menu-icon { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+<!DOCTYPE html>   <html lang="en">    
+<head>      
+<link rel="manifest" href="manifest.json">            <meta name="theme-color" content="#C0C0C0">                  
+  <meta charset="UTF-8" />                  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>                  
+  <title>WENS (West, East, North, South) — Home</title>    <!-- SEO Meta Tags -->    <meta name="description" content="WENS (West, East, North, South) — Your journey to mastering knowledge starts here. Explore resources, lessons, and daily inspiration.">                  
+  <meta name="keywords" content="WENS, West East North South, learning, resources, daily quotes, education">                  
+  <meta name="author" content="JASOOMI">    <!-- Open Graph / Facebook -->    <meta property="og:title" content="WENS (West, East, North, South) — Home">                  
+  <meta property="og:description" content="Your journey to mastering knowledge starts here. Explore resources, lessons, and daily inspiration.">                  
+  <meta property="og:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/og-image-v2.jpeg">                  
+  <meta property="og:url" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/">                  
+  <meta property="og:type" content="website">    <!-- Twitter -->    <meta name="twitter:card" content="summary_large_image">                  
+  <meta name="twitter:title" content="WENS (West, East, North, South) — Home">                  
+  <meta name="twitter:description" content="Your journey to mastering knowledge starts here. Explore resources, lessons, and daily inspiration.">                  
+  <meta name="twitter:image" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/og-image-v2.jpeg">    <style>                  
+   body {                  
+  font-family: Arial, sans-serif;                  
+  margin: 0;                  
+  padding: 0;                  
+  overflow-x: hidden;                  
+  background-color: silver;                  
+  transition: background 0.4s ease, color 0.4s ease;                  
+}                  
+    body.dark { background: #1e1e1e; color: #f0f0f0; }                  
+    body.dark header { background: linear-gradient(90deg, #222, #444); }                  
+    body.dark .card,                  
+    body.dark #contact {                  
+      background: #2b2b2b;                  
+      color: #f0f0f0;                  
+      box-shadow: 0 3px 10px rgba(255,255,255,0.05);                  
+    }         
+    header {              
+background: linear-gradient(90deg, #00008B, #8B0000, #008080);              
+color: white;              
+padding: 2rem 2rem;              
+display: flex;              
+align-items: center;              
+justify-content: space-between;              
+gap: 10px;              
+border-radius: 12px;              
+max-width: 95%;              
+margin: 1rem auto;              
+box-shadow: 8px 8px 16px rgba(0,0,0,0.25),              
+-8px -8px 16px rgba(255,255,255,0.4),              
+inset 0 2px 4px rgba(255,255,255,0.3);              
+position: relative;              
+transition: transform 0.3s ease, box-shadow 0.3s ease;              
+opacity: 0;              
+transform: translateY(-20px);              
+}              
+header.show {              
+opacity: 1;              
+transform: translateY(0);              
+transition: all 0.8s ease-out;              
+}              
+header:hover {              
+transform: translateY(-6px) scale(1.02);              
+box-shadow: 10px 10px 20px rgba(0,0,0,0.3),              
+-10px -10px 20px rgba(255,255,255,0.5),              
+inset 0 3px 6px rgba(255,255,255,0.4);              
+}  .logo-container { display: flex; align-items: center; gap: 10px; }            
+.logo-container svg { height: 60px; width: 60px; filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4)); }            
+.logo-container h1 { font-size: 1.4rem; margin: 0; font-weight: bold; }    .card {        
+border-radius: 8px;        
+padding: 1rem;        
+margin: 1rem auto;        
+max-width: 95%;        
+background: white;        
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);        
+opacity: 0;        
+transform: translateY(30px);        
+}        
+.card.show {        
+opacity: 1;        
+transform: translateY(0);        
+transition: all 0.8s ease-out;        
+}        
+.silver-3d {        
+background: linear-gradient(145deg, #dcdcdc, #ffffff);        
+border-radius: 14px;        
+box-shadow: 10px 10px 20px rgba(0,0,0,0.25),        
+-10px -10px 20px rgba(255,255,255,0.7),        
+inset 0 1px 2px rgba(255,255,255,0.4);        
+transition: transform 0.3s ease, box-shadow 0.3s ease;        
+}        
+.silver-3d:hover {        
+transform: translateY(-6px) scale(1.02);        
+box-shadow: 12px 12px 25px rgba(0,0,0,0.3),        
+-12px -12px 25px rgba(255,255,255,0.8),        
+inset 0 2px 4px rgba(255,255,255,0.5);        
+}  .card.silver-3d {      
+margin-left: auto;      
+margin-right: auto;      
+width: calc(100% - 40px);      
+}  .btn-3d-green {    
+background: linear-gradient(145deg, #4caf50, #2e7d32);    
+color: white;    
+border: none;    
+padding: 10px 20px;    
+font-size: 1rem;    
+border-radius: 8px;    
+cursor: pointer;    
+box-shadow: 4px 4px 8px rgba(0,0,0,0.3),    
+-4px -4px 8px rgba(255,255,255,0.3);    
+transition: transform 0.2s ease, box-shadow 0.2s ease;    
+}    
+.btn-3d-green:hover {    
+transform: translateY(-3px);    
+box-shadow: 6px 6px 12px rgba(0,0,0,0.4),    
+-6px -6px 12px rgba(255,255,255,0.4);    
+}  #contact {  
+border-radius: 8px;  
+padding: 1rem;  
+margin: 1rem auto;  
+max-width: 95%;  
+background: white;  
+}  .menu-icon { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
 .menu-icon span { width: 26px; height: 3px; background-color: white; border-radius: 2px; display: block; }
 
 .drawer {
@@ -210,155 +201,148 @@ to {
 transform: translateX(-100%);
 }
 }
-</style> 
-</head>
+</style>
 
-<body>          
-  <!-- HEADER -->          
-  <header>          
-    <div class="logo-container">          
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">          
-        <circle cx="256" cy="256" r="256" fill="url(#grad)" />          
-        <defs>          
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">          
-            <stop offset="0%" style="stop-color:#2e8b57; stop-opacity:1" />          
-            <stop offset="100%" style="stop-color:#1e90ff; stop-opacity:1" />          
-          </linearGradient>          
-        </defs>          
-        <path d="M256 32C150 32 64 118 64 224c0 73 43 136 104 167 7 3 12-3 9-9-9-18-13-38-13-58 0-48 39-87 87-87s87 39 87 87c0 20-4 40-13 58-3 6 2 12 9 9 61-31 104-94 104-167 0-106-86-192-192-192z" fill="rgba(255,255,255,0.2)"/>          
-      </svg>          
-      <h1>WENS (West, East, North, South)</h1>          
-    </div>          
-    <div style="display: flex; align-items: center; gap: 10px;">          
-      <button class="dark-toggle" id="darkToggle">🌙</button>          
-      <div id="profileCircle" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid white; display: none; cursor: pointer;">          
-        <img id="profileImg" src="" alt="Profile" style="width:100%; height:100%; object-fit: cover;">          
-      </div>          
-      <div class="menu-icon" id="menuIcon">          
-        <span></span><span></span><span></span>          
-      </div>          
-    </div>          
-  </header>    <!-- NAVIGATION -->    <nav class="drawer" id="drawer">          
-    <div class="drawer-header"><strong>Menu</strong></div>          
-    <a href="profile.html" class="silver-3d">Profile</a>          
-    <a href="about.html" class="silver-3d">About</a>          
-    <a href="mailto:lizardbaloch@gmail.com" class="silver-3d">Contact Form</a>          
-  </nav>          
-  <div class="overlay" id="overlay"></div>    <!-- MAIN CONTENT -->    <main>          
-    <div class="scrolling-card">          
-  <div class="scrolling-text">          
-    Welcome WENS! Enjoy browsing our content and discovering new things. Built by <strong>JASOOMI</strong>          
-  </div>          
-</div>          
-    <!-- Search Bar -->          
-    <div class="card silver-3d" style="display:block; margin:0 auto 1rem auto; text-align:center; background:silver; padding:0.5rem; max-width:300px; border-radius:10px;">          
-      <input type="text" id="siteSearch" placeholder="Search..." style="padding:4px 6px; width:150px; border-radius:6px; border:1px solid #ccc; font-size:0.8rem; outline:none;">          
-      <button id="searchBtn" style="padding:4px 8px; background:linear-gradient(145deg, #4caf50, #2e7d32); color:white; border:none; border-radius:6px; cursor:pointer; font-size:0.8rem; box-shadow:2px 2px 4px rgba(0,0,0,0.3), -2px -2px 4px rgba(255,255,255,0.3); margin-left:3px;">Go</button>          
-    </div>  <!-- Sections -->          
-<section>          
-  <div class="card silver-3d">          
-    <h2><em><strong>Welcome to WENS</strong></em></h2>          
-    <p>Your journey to mastering knowledge starts here.</p>          
-    <button class="btn-3d-green" onclick="location.href='learn.html'">Let's Start</button>          
-  </div>          
-</section>    <section>          
-  <div class="card silver-3d">          
-    <h2><em><strong>🌐World Current Affairs</strong></em></h2>          
-    <p>There New updates that lead you to your success h.</p>          
-    <button class="btn-3d-green" onclick="location.href='WorldCurrentAffairs.html'">let's starts</button>          
-  </div>          
-</section>    <section>          
-  <div class="card silver-3d">          
-    <h2><em><strong>Education</strong></em></h2>          
-    <p>There New updates that lead you to your success h.</p>          
-    <button class="btn-3d-green" onclick="location.href='Education.html'">let's starts</button>          
-  </div>          
-</section>    <section>          
-  <div class="card silver-3d">          
-    <h2><em><strong>Sports</strong></em></h2>          
-    <p>There New updates that lead you to your success h.</p>          
-    <button class="btn-3d-green" onclick="location.href='Sports.html'">let's starts</button>          
-  </div>          
-</section>    <section>          
-  <div class="card silver-3d">          
-    <h2><em><strong>Trade/Cripto</strong></em></h2>          
-    <p>There New updates that lead you to your success h.</p>          
-    <button class="btn-3d-green" onclick="location.href='Trade-Cripto.html'">let's starts</button>          
-  </div>          
-</section>          
-<section>        
-  <div class="card silver-3d">          
-    <h2><em><strong>Movies/TV showes</strong></em></h2>          
-    <p>There New updates that lead you to your success h.</p>          
-    <button class="btn-3d-green" onclick="location.href='MoviesTvshows.html'">let's starts</button>          
-  </div>          
-</section>  <section>        
-  <div class="card silver-3d">          
-    <h2><em><strong>Games</strong></em></h2>          
-    <p>There New updates that lead you to your success h.</p>          
-    <button class="btn-3d-green" onclick="location.href='game.html'">let's starts</button>          
-  </div>          
-</section>        
-<section>          
-  <div class="card silver-3d">          
-    <h2>Resources</h2>          
-    <p>Download helpful materials and guides.</p>          
-    <button class="btn-3d-green" onclick="location.href='resources.html'">Download</button>          
-  </div>          
-</section>    </main>    <!-- FOOTER -->    <footer>          
-    &copy; 2025 WENS (West, East, North, South) — Built by <strong>JASOOMI</strong>          
-  </footer>    <!-- SCRIPTS -->    <script>          
-    const menuIcon = document.getElementById('menuIcon');          
-    const drawer = document.getElementById('drawer');          
-    const overlay = document.getElementById('overlay');          
-    const darkToggle = document.getElementById('darkToggle');          
-    const profileCircle = document.getElementById('profileCircle');          
-    const profileImg = document.getElementById('profileImg');    menuIcon.addEventListener('click', () => {          
-  drawer.classList.toggle('open');          
-  overlay.classList.toggle('visible');          
-});          
-overlay.addEventListener('click', () => {          
-  drawer.classList.remove('open');          
-  overlay.classList.remove('visible');          
-});          
-darkToggle.addEventListener('click', () => {          
-  document.body.classList.toggle('dark');          
-  darkToggle.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";          
-});      const savedProfileImg = localStorage.getItem('profileImage');    
-if (savedProfileImg) {    
-profileImg.src = savedProfileImg;    
-profileCircle.style.display = 'block';    
-}    const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('show');
-}
-});
-}, { threshold: 0.15 });
-
-document.querySelectorAll('header, .card').forEach(el => observer.observe(el));
-
-const searchInput = document.getElementById('siteSearch');
-const searchBtn = document.getElementById('searchBtn');
-
-function filterSections() {
-let query = searchInput.value.trim().toLowerCase();
-let cards = document.querySelectorAll('main section');
-cards.forEach(section => {
-let title = section.querySelector('h2')?.textContent.trim().toLowerCase() || '';
-if (title.startsWith(query) || query === '') {
-section.style.display = '';
-} else {
-section.style.display = 'none';
-}
-});
-}
-searchInput.addEventListener('input', filterSections);
-searchBtn.addEventListener('click', filterSections);
-
-  </script>            
-
-           
-    
-      
-
+</head>  <body>                  
+  <!-- HEADER -->                  
+  <header>                  
+    <div class="logo-container">                  
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">                  
+        <circle cx="256" cy="256" r="256" fill="url(#grad)" />                  
+        <defs>                  
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">                  
+            <stop offset="0%" style="stop-color:#2e8b57; stop-opacity:1" />                  
+            <stop offset="100%" style="stop-color:#1e90ff; stop-opacity:1" />                  
+          </linearGradient>                  
+        </defs>                  
+        <path d="M256 32C150 32 64 118 64 224c0 73 43 136 104 167 7 3 12-3 9-9-9-18-13-38-13-58 0-48 39-87 87-87s87 39 87 87c0 20-4 40-13 58-3 6 2 12 9 9 61-31 104-94 104-167 0-106-86-192-192-192z" fill="rgba(255,255,255,0.2)"/>                  
+      </svg>                  
+      <h1>WENS (West, East, North, South)</h1>                  
+    </div>                  
+    <div style="display: flex; align-items: center; gap: 10px;">                  
+      <button class="dark-toggle" id="darkToggle">🌙</button>                  
+      <div id="profileCircle" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid white; display: none; cursor: pointer;">                  
+        <img id="profileImg" src="" alt="Profile" style="width:100%; height:100%; object-fit: cover;">                  
+      </div>                  
+      <div class="menu-icon" id="menuIcon">                  
+        <span></span><span></span><span></span>                  
+      </div>                  
+    </div>                  
+  </header>    <!-- NAVIGATION -->    <nav class="drawer" id="drawer">                  
+    <div class="drawer-header"><strong>Menu</strong></div>                  
+    <a href="profile.html" class="silver-3d">Profile</a>                  
+    <a href="about.html" class="silver-3d">About</a>                  
+    <a href="mailto:lizardbaloch@gmail.com" class="silver-3d">Contact Form</a>                  
+  </nav>                  
+  <div class="overlay" id="overlay"></div>    <!-- MAIN CONTENT -->    <main>                  
+    <div class="scrolling-card">                  
+  <div class="scrolling-text">                  
+    Welcome WENS! Enjoy browsing our content and discovering new things. Built by <strong>JASOOMI</strong>                  
+  </div>                  
+</div>                  
+    <!-- Search Bar -->                  
+    <div class="card silver-3d" style="display:block; margin:0 auto 1rem auto; text-align:center; background:silver; padding:0.5rem; max-width:300px; border-radius:10px;">                  
+      <input type="text" id="siteSearch" placeholder="Search..." style="padding:4px 6px; width:150px; border-radius:6px; border:1px solid #ccc; font-size:0.8rem; outline:none;">                  
+      <button id="searchBtn" style="padding:4px 8px; background:linear-gradient(145deg, #4caf50, #2e7d32); color:white; border:none; border-radius:6px; cursor:pointer; font-size:0.8rem; box-shadow:2px 2px 4px rgba(0,0,0,0.3), -2px -2px 4px rgba(255,255,255,0.3); margin-left:3px;">Go</button>                  
+    </div>  <!-- Sections -->                  
+<section>                  
+  <div class="card silver-3d">                  
+    <h2><em><strong>Welcome to WENS</strong></em></h2>                  
+    <p>Your journey to mastering knowledge starts here.</p>                  
+    <button class="btn-3d-green" onclick="location.href='learn.html'">Let's Start</button>                  
+  </div>                  
+</section>    <section>                  
+  <div class="card silver-3d">                  
+    <h2><em><strong>🌐World Current Affairs</strong></em></h2>                  
+    <p>There New updates that lead you to your success h.</p>                  
+    <button class="btn-3d-green" onclick="location.href='WorldCurrentAffairs.html'">let's starts</button>                  
+  </div>                  
+</section>    <section>                  
+  <div class="card silver-3d">                  
+    <h2><em><strong>Education</strong></em></h2>                  
+    <p>There New updates that lead you to your success h.</p>                  
+    <button class="btn-3d-green" onclick="location.href='Education.html'">let's starts</button>                  
+  </div>                  
+</section>    <section>                  
+  <div class="card silver-3d">                  
+    <h2><em><strong>Sports</strong></em></h2>                  
+    <p>There New updates that lead you to your success h.</p>                  
+    <button class="btn-3d-green" onclick="location.href='Sports.html'">let's starts</button>                  
+  </div>                  
+</section>    <section>                  
+  <div class="card silver-3d">                  
+    <h2><em><strong>Trade/Cripto</strong></em></h2>                  
+    <p>There New updates that lead you to your success h.</p>                  
+    <button class="btn-3d-green" onclick="location.href='Trade-Cripto.html'">let's starts</button>                  
+  </div>                  
+</section>                  
+<section>                
+  <div class="card silver-3d">                  
+    <h2><em><strong>Movies/TV showes</strong></em></h2>                  
+    <p>There New updates that lead you to your success h.</p>                  
+    <button class="btn-3d-green" onclick="location.href='MoviesTvshows.html'">let's starts</button>                  
+  </div>                  
+</section>  <section>                
+  <div class="card silver-3d">                  
+    <h2><em><strong>Games</strong></em></h2>                  
+    <p>There New updates that lead you to your success h.</p>                  
+    <button class="btn-3d-green" onclick="location.href='game.html'">let's starts</button>                  
+  </div>                  
+</section>                
+<section>                  
+  <div class="card silver-3d">                  
+    <h2>Resources</h2>                  
+    <p>Download helpful materials and guides.</p>                  
+    <button class="btn-3d-green" onclick="location.href='resources.html'">Download</button>                  
+  </div>                  
+</section>    </main>    <!-- FOOTER -->    <footer>                  
+    &copy; 2025 WENS (West, East, North, South) — Built by <strong>JASOOMI</strong>                  
+  </footer>    <!-- SCRIPTS -->    <script>                  
+    const menuIcon = document.getElementById('menuIcon');                  
+    const drawer = document.getElementById('drawer');                  
+    const overlay = document.getElementById('overlay');                  
+    const darkToggle = document.getElementById('darkToggle');                  
+    const profileCircle = document.getElementById('profileCircle');                  
+    const profileImg = document.getElementById('profileImg');    menuIcon.addEventListener('click', () => {                  
+  drawer.classList.toggle('open');                  
+  overlay.classList.toggle('visible');                  
+});                  
+overlay.addEventListener('click', () => {                  
+  drawer.classList.remove('open');                  
+  overlay.classList.remove('visible');                  
+});                  
+darkToggle.addEventListener('click', () => {                  
+  document.body.classList.toggle('dark');                  
+  darkToggle.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";                  
+});      const savedProfileImg = localStorage.getItem('profileImage');            
+if (savedProfileImg) {            
+profileImg.src = savedProfileImg;            
+profileCircle.style.display = 'block';            
+}    const observer = new IntersectionObserver(entries => {        
+entries.forEach(entry => {        
+if (entry.isIntersecting) {        
+entry.target.classList.add('show');        
+}        
+});        
+}, { threshold: 0.15 });  document.querySelectorAll('header, .card').forEach(el => observer.observe(el));  const searchInput = document.getElementById('siteSearch');    
+const searchBtn = document.getElementById('searchBtn');  function filterSections() {  
+let query = searchInput.value.trim().toLowerCase();  
+let cards = document.querySelectorAll('main section');  
+cards.forEach(section => {  
+let title = section.querySelector('h2')?.textContent.trim().toLowerCase() || '';  
+if (title.startsWith(query) || query === '') {  
+section.style.display = '';  
+} else {  
+section.style.display = 'none';  
+}  
+});  
+}  
+searchInput.addEventListener('input', filterSections);  
+searchBtn.addEventListener('click', filterSections);  
+if ('serviceWorker' in navigator) {  
+  window.addEventListener('load', () => {  
+    navigator.serviceWorker.register('/sw.js')  
+      .then(reg => console.log('Service Worker registered:', reg))  
+      .catch(err => console.log('Service Worker failed:', err));  
+  });  
+}    </script>              

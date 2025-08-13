@@ -1,119 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ethereum (ETH) – Full Overview</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    .header-card, .section {
-      background: #1a1a1a;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 800px;
-      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-      text-align: left;
-      transition: transform 0.3s ease;
-    }
-    .header-card:hover, .section:hover {
-      transform: translateY(-5px);
-    }
-    .crypto-logo { width: 100px; height: 100px; object-fit: contain; }
-    h1 { color: #00ff88; }
-    h2 { color: #ffcc00; margin-top: 40px; }
-    p { color: #ccc; line-height: 1.6; }
-    .highlight { color: #00ff88; font-weight: bold; }
-    .btn-3d {
-      background: linear-gradient(145deg, #00ff88, #00cc6a);
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 5px #00994d;
-      transition: all 0.2s ease;
-      display: inline-block;
-    }
-    .btn-3d:active { transform: translateY(4px); box-shadow: 0 1px #00994d; }
-    .price-box {
-      background: #222;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 400px;
-      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
-      text-align: left;
-    }
-    .price-box h3 { margin: 0; color: #00ff88; }
-    .price-box p { margin: 5px 0; }
-    .chart-container {
-      position: relative;
-      margin: 20px auto;
-      max-width: 800px;
-    }
-    .chart-container img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(255, 204, 0, 0.2);
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ethereum (ETH) – Full Overview</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.header-card, .section, .price-box {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+.header-card:hover, .section:hover, .price-box:hover {
+  transform: translateY(-5px);
+}
+.crypto-logo { width: 100px; height: 100px; object-fit: contain; }
+h1 { color: #00ff88; }
+h2 { color: #ffcc00; margin-top: 40px; }
+p { color: #ccc; line-height: 1.6; }
+.highlight { color: #00ff88; font-weight: bold; }
+.btn-3d {
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px #00994d;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+.btn-3d:active { transform: translateY(4px); box-shadow: 0 1px #00994d; }
+.chart-container { margin: 20px auto; max-width: 800px; }
+.chart-container iframe { width: 100%; height: 400px; border: 0; border-radius: 10px; }
+@media (max-width:600px){
+  .header-card, .section, .price-box { margin:10px; padding:15px; }
+  .crypto-logo { width:80px; height:80px; }
+}
+</style>
 </head>
 <body>
 
-  <div class="header-card">
-    <img src="images/crypto/eth.png" alt="Ethereum" class="crypto-logo" />
-    <h1>Ethereum (ETH) – Full Overview</h1>
-    <p>A leading programmable blockchain platform—and the world’s second-largest cryptocurrency by market cap.</p>
-  </div>
+<div class="header-card">
+  <img src="images/crypto/eth.png" alt="Ethereum" class="crypto-logo" />
+  <h1>Ethereum (ETH) – Full Overview</h1>
+  <p>A leading programmable blockchain platform—and the world’s second-largest cryptocurrency by market cap.</p>
+</div>
 
-  <div class="price-box">
-    <h3>Today’s Live Price & Market Stats</h3>
-    <p>Price: <span class="highlight">$4,630.31 USD</span></p>
-    <p>24h High: <span class="highlight">$4,674.11</span> • 24h Low: <span class="highlight">$4,265.59</span></p>
-  </div>
+<div class="price-box">
+  <h3>Live Price & Market Stats</h3>
+  <p>Price: <span id="eth-price" class="highlight">Loading…</span></p>
+  <p>24h High: <span id="eth-high" class="highlight">Loading…</span> • 24h Low: <span id="eth-low" class="highlight">Loading…</span></p>
+</div>
 
-  <div class="chart-container">
-    <img src="images/eth-price-chart.png" alt="Ethereum price chart today" />
-  </div>
+<div class="chart-container">
+  <iframe src="https://s.tradingview.com/embed-widget/symbol-overview/?symbol=ETHUSD" scrolling="no"></iframe>
+</div>
 
-  <div class="section">
-    <h2>Live ETH Price Widget</h2>
-    <!-- Embed finance UI widget here -->
-    1
-  </div>
+<div class="section">
+  <h2>Ethereum At-a-Glance</h2>
+  <p>Launched in <span class="highlight">2015</span> by Vitalik Buterin, Gavin Wood, and other co-founders, Ethereum is an open-source platform enabling programmable blockchain, smart contracts, decentralized apps (dApps), NFTs, and DeFi.</p>
+  <p>In September 2022, Ethereum transitioned from Proof-of-Work to Proof-of-Stake (“The Merge”), cutting energy usage by over 99%.</p>
+  <p>Recent upgrades include “Dencun” (March 2024) introducing proto-sharding (EIP-4844), and the upcoming “Pectra” expected in mid-2025.</p>
+</div>
 
-  <div class="section">
-    <h2>Ethereum At-a-Glance</h2>
-    <p>Launched in <span class="highlight">2015</span> by Vitalik Buterin, Gavin Wood, and other co-founders, Ethereum is an open-source platform enabling programmable blockchain, smart contracts, decentralized apps (dApps), NFTs, and DeFi.2</p>
-    <p>In September 2022, Ethereum transitioned from Proof-of-Work to Proof-of-Stake (“The Merge”), cutting energy usage by over 99%.3</p>
-    <p>Recent upgrades include “Dencun” (March 2024) introducing proto-sharding (EIP-4844), and the upcoming “Pectra” expected in mid-2025, which alters staking parameters per validator.4</p>
-  </div>
+<div class="section">
+  <h2>Institutional & Market Trends</h2>
+  <p>Ethereum has rallied past $4,000—driven by institutional buyers and favorable regulatory prospects for ETH ETFs.</p>
+  <p>Recent staking metrics show significant inflows, though overall liquidity on exchanges is tightening due to accumulation.</p>
+</div>
 
-  <div class="section">
-    <h2>Market Metrics</h2>
-    <p>Current Price: <span class="highlight">$4,625.52</span> (+7.22%)</p>
-    <p>24-Hour Trading Volume: <span class="highlight">$64.65 B</span></p>
-    <p>Market Cap: <span class="highlight">$558.34 B</span> • Circulating Supply: ~120.71M ETH</p>
-    <p>Liquid DeFi Volume (24h): <span class="highlight">$9.33 B</span> • Ethereum Network Fees (24h): <span class="highlight">$49.82 M</span></p>
-    <p>DEX vs CEX Volume Ratio: <span class="highlight">~32% DEX</span></p> 
-    <p>Daily Active Addresses: <span class="highlight">~576.5 K</span> • Transactions: ~1.76 M</p>5
-  </div>
+<a href="crypto.html" class="btn-3d">⬅ Back</a>
 
-  <div class="section">
-    <h2>Institutional Trends & Liquidity Insights</h2>
-    <p>Ethereum has rallied past $4,000—driven by institutional buyers like Bitmine Immersion Technologies and Sharplink Gaming acquiring large amounts, and favorable regulatory prospects for ETH ETFs.6</p>
-    <p>Recent staking metrics show significant inflows, though overall liquidity on exchanges is tightening due to accumulation.7</p>
-  </div>
+<script>
+// Live ETH price from CoinGecko API
+async function fetchETH() {
+  try {
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/ethereum');
+    const data = await res.json();
+    document.getElementById('eth-price').innerText = `$${data.market_data.current_price.usd.toLocaleString()}`;
+    document.getElementById('eth-high').innerText = `$${data.market_data.high_24h.usd.toLocaleString()}`;
+    document.getElementById('eth-low').innerText = `$${data.market_data.low_24h.usd.toLocaleString()}`;
+  } catch(e) {
+    document.getElementById('eth-price').innerText = 'Error';
+    document.getElementById('eth-high').innerText = '-';
+    document.getElementById('eth-low').innerText = '-';
+  }
+}
+fetchETH();
 
-  <a href="crypto.html" class="btn-3d">⬅ Back</a>
+// Register Service Worker for offline caching
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').then(()=>console.log('SW registered'))
+  .catch(err=>console.log('SW error', err));
+}
+</script>
 
 </body>
 </html>

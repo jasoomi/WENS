@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Latest Movie Releases - WENS</title>
 
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#004d40">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: silver; }
     header { background: linear-gradient(90deg, #004d40, #001f5c); color: white; padding: 1rem; text-align: center; border-radius: 12px; margin: 1rem; }
@@ -16,6 +22,8 @@
     .movie-card h3 { margin:0 0 10px; }
     .movie-card p { margin:0; }
     .movie-card .actors { font-size:0.9rem; color:#555; }
+
+    /* Popup */
     .popup { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.3); padding:20px; width:80%; max-width:600px; display:none; z-index:1000; }
     .popup img { width:100%; height:auto; border-radius:8px; margin-bottom:10px; }
     .popup h3 { margin:0 0 10px; }
@@ -23,6 +31,15 @@
     .popup .actors { font-size:0.9rem; color:#555; }
     .popup button { background: linear-gradient(145deg,#ffffff,#d1d1d1); border:none; padding:8px 14px; border-radius:10px; box-shadow:4px 4px 8px rgba(0,0,0,0.2),-4px -4px 8px rgba(255,255,255,0.6); cursor:pointer; margin-top:10px; }
     .popup button:hover { background: linear-gradient(145deg,#d1d1d1,#ffffff); }
+
+    /* MiniPSC / Silver Container */
+    .silver-container { background: #c0c0c0; border-radius: 15px; padding: 1.5rem; margin: 1rem; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.4); }
+
+    /* Supporters Section */
+    .supporters { background: #f4f4f4; padding: 1rem; border-radius: 12px; margin: 1rem; text-align:center; }
+    .supporters h3 { margin: 0 0 10px; }
+    .supporters img { width:60px; height:60px; margin:5px; border-radius:50%; }
+
   </style>
 </head>
 <body>
@@ -35,21 +52,25 @@
   <input type="text" id="searchInput" class="search-bar" placeholder="Search movies...">
 
   <main id="movie-container">
-    <!-- Movie Cards -->
-    <div class="movie-card" data-title="Weapons" data-rating="N/A" data-actors="Josh Brolin, Alden Ehrenreich, Austin Abrams" data-image="https://m.media-amazon.com/images/I/91h8T6+0bsL._SL1500_.jpg" data-description="Seventeen children mysteriously vanish on the same night, leading to a gripping tale of horror and suspense. Budget: $38M, Opening Day: $18.2M, Weekend: $70M global.">
-      <img src="https://m.media-amazon.com/images/I/91h8T6+0bsL._SL1500_.jpg" alt="Weapons">
-      <h3>Weapons</h3>
-      <p>Rating: N/A</p>
-      <p class="actors">Starring: Josh Brolin, Alden Ehrenreich, Austin Abrams</p>
+    <!-- MiniPSC / Silver Container -->
+    <div class="silver-container">
+      <h2>Featured Movies</h2>
+      <div class="movie-card" data-title="Weapons" data-rating="N/A" data-actors="Josh Brolin, Alden Ehrenreich, Austin Abrams" data-image="https://m.media-amazon.com/images/I/91h8T6+0bsL._SL1500_.jpg" data-description="Seventeen children mysteriously vanish on the same night, leading to a gripping tale of horror and suspense. Budget: $38M, Opening Day: $18.2M, Weekend: $70M global.">
+        <img src="https://m.media-amazon.com/images/I/91h8T6+0bsL._SL1500_.jpg" alt="Weapons">
+        <h3>Weapons</h3>
+        <p>Rating: N/A</p>
+        <p class="actors">Starring: Josh Brolin, Alden Ehrenreich, Austin Abrams</p>
+      </div>
+
+      <div class="movie-card" data-title="Freakier Friday" data-rating="N/A" data-actors="Lindsay Lohan, Jamie Lee Curtis" data-image="https://m.media-amazon.com/images/I/81GZt2P7ydL._SL1500_.jpg" data-description="A sequel to the 2003 hit, featuring body-swapping chaos as two families merge. Budget: $42M, Opening Weekend: $29M.">
+        <img src="https://m.media-amazon.com/images/I/81GZt2P7ydL._SL1500_.jpg" alt="Freakier Friday">
+        <h3>Freakier Friday</h3>
+        <p>Rating: N/A</p>
+        <p class="actors">Starring: Lindsay Lohan, Jamie Lee Curtis</p>
+      </div>
     </div>
 
-    <div class="movie-card" data-title="Freakier Friday" data-rating="N/A" data-actors="Lindsay Lohan, Jamie Lee Curtis" data-image="https://m.media-amazon.com/images/I/81GZt2P7ydL._SL1500_.jpg" data-description="A sequel to the 2003 hit, featuring body-swapping chaos as two families merge. Budget: $42M, Opening Weekend: $29M.">
-      <img src="https://m.media-amazon.com/images/I/81GZt2P7ydL._SL1500_.jpg" alt="Freakier Friday">
-      <h3>Freakier Friday</h3>
-      <p>Rating: N/A</p>
-      <p class="actors">Starring: Lindsay Lohan, Jamie Lee Curtis</p>
-    </div>
-
+    <!-- Additional Movie Cards -->
     <div class="movie-card" data-title="War 2" data-rating="8.5/10" data-actors="Hrithik Roshan, Jr NTR, Kiara Advani" data-image="https://m.media-amazon.com/images/I/81nJ9uhtdPL._SL1500_.jpg" data-description="A high-octane action thriller starring Hrithik Roshan and Jr NTR. Budget: ₹400 crore, Opening Weekend: ₹150 crore.">
       <img src="https://m.media-amazon.com/images/I/81nJ9uhtdPL._SL1500_.jpg" alt="War 2">
       <h3>War 2</h3>
@@ -71,6 +92,14 @@
       <p class="actors">Starring: Sydney Sweeney, Paul Walter Hauser, Halsey</p>
     </div>
   </main>
+
+  <!-- Supporters Section -->
+  <div class="supporters">
+    <h3>Our Supporters</h3>
+    <img src="supporter1.png" alt="Supporter 1">
+    <img src="supporter2.png" alt="Supporter 2">
+    <img src="supporter3.png" alt="Supporter 3">
+  </div>
 
   <!-- Popup -->
   <div class="popup" id="popup">
@@ -116,7 +145,17 @@
       });
     });
   </script>
-  
+  <script>
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      }).catch(err => {
+        console.log('Service Worker registration failed:', err);
+      });
+    });
+  }
 </script>
 </body>
 </html>

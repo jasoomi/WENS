@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>History & Culture</title>
+
+<!-- PWA Meta -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -47,6 +54,7 @@ header input {
 .card h2 { color: #00ff88; }
 .card p { color: #ccc; text-align: justify; }
 </style>
+
 <script>
 function searchTopics() {
   let input = document.getElementById('search').value.toLowerCase();
@@ -59,14 +67,12 @@ function searchTopics() {
 </script>
 </head>
 <body>
-
 <header>
   <h1>History & Culture</h1>
   <input type="text" id="search" onkeyup="searchTopics()" placeholder="Search History or Culture...">
 </header>
 
 <h2 class="section-title">History</h2>
-
 <div class="card"><h2>Ancient Egypt</h2><p>Ancient Egypt, one of the earliest civilizations, thrived along the Nile River for more than 3,000 years. Its society revolved around powerful pharaohs, who were seen as gods on Earth, and a complex religious system worshiping deities such as Ra, Isis, and Osiris. The Egyptians are famed for their monumental architecture—the Pyramids of Giza, the Sphinx, and temples at Karnak and Luxor. Their mastery in agriculture, enabled by the predictable flooding of the Nile, supported a stable and prosperous society. They pioneered advancements in mathematics, medicine, and engineering, and their hieroglyphic writing preserved records for posterity. Despite conquests by Persians, Greeks, and Romans, Egypt’s cultural influence endured, inspiring art, religion, and scholarship worldwide.</p></div>
 
 <div class="card"><h2>Ancient Greece</h2><p>Ancient Greece, flourishing between the 8th and 4th centuries BCE, laid the intellectual and political foundations of Western civilization. City-states like Athens championed democracy, while Sparta embodied military discipline. Greek philosophers—Socrates, Plato, and Aristotle—revolutionized thinking on ethics, politics, and science. Art and architecture, epitomized by the Parthenon, celebrated harmony and proportion. Greek mythology enriched literature and drama, inspiring works performed in grand amphitheaters. The Olympic Games promoted unity among Greek states. Alexander the Great’s conquests spread Hellenistic culture from Egypt to India, influencing language, trade, and governance. Even after Rome’s rise, Greek ideas continued to shape education, law, and the arts for millennia.</p></div>
@@ -123,9 +129,4 @@ function searchTopics() {
 
 <div class="card"><h2>Sports</h2><p>Sports reflect cultural values such as teamwork, competition, and perseverance. Traditional games like Japan’s sumo wrestling or Scotland’s Highland Games preserve heritage, while global sports like soccer create international camaraderie. Sports often transcend politics, fostering unity and cultural exchange during events like the Olympics.</p></div>
 
-<div class="card"><h2>Education</h2><p>Education is both a driver and a reflection of culture. Systems vary widely, from traditional apprenticeship models to formal institutions. Education transmits cultural values, preserves languages, and fosters innovation. Globalization and technology have expanded access, creating opportunities for cross-cultural learning while also challenging traditional methods.</p></div>
-
-<div class="card"><h2>Family Traditions</h2><p>Family traditions anchor individuals within their cultural heritage. Whether it’s a weekly meal, holiday rituals, or storytelling sessions, these customs strengthen bonds across generations. They adapt over time while retaining core values, ensuring that cultural identity remains vibrant in changing social landscapes.</p></div>
-
-</body>
-</html>
+<div class="card"><h2>Education</h2><p>Education is both a driver and a reflection of culture. Systems vary widely, from traditional apprenticeship models to formal institutions. Education transmits cultural values, preserves languages, and fosters innovation. Globalization and technology have expanded access, creating opportunities for cross-cultural

@@ -4,6 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EUR/JPY</title>
+
+<!-- PWA / APK support -->
+<link rel="manifest" href="../manifest.json" />
+<meta name="theme-color" content="#111" />
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -77,7 +82,6 @@
 <body>
 
   <div class="header-card" role="region" aria-label="EUR/JPY overview">
-    <!-- replace src with your local logo path if needed -->
     <img src="../images/forex/eurjpy.png" alt="EUR/JPY logo" class="pair-logo" />
     <h1>EUR/JPY</h1>
 
@@ -88,9 +92,18 @@
 
     <div class="meta">Major influences: ECB and BOJ policies, global risk sentiment, trade balances.</div>
 
-    <!-- Back to forex index -->
     <a class="btn-3d" href="../forex.html" title="Back to Forex">⬅ Back</a>
   </div>
 
+  <!-- Register service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('../sw.js')
+          .then(reg => console.log('SW registered: ', reg))
+          .catch(err => console.log('SW registration failed: ', err));
+      });
+    }
+  </script>
 </body>
 </html>

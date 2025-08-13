@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solana (SOL)</title>
+<title>Solana (SOL) - Crypto PWA</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00ff88">
+
 <style>
-body { font-family: Arial, sans-serif; background: #111; color: #fff; margin: 0; padding: 0; 
- -align: center; }
+body { font-family: Arial, sans-serif; background: #111; color: #fff; margin: 0; padding: 0; text-align: center; }
 .header-card { background: #1a1a1a; border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 400px; box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); transition: transform 0.3s ease; }
 .header-card:hover { transform: translateY(-5px); }
 .crypto-logo { width: 100px; height: 100px; object-fit: contain; }
@@ -25,6 +29,15 @@ p { color: #ccc; }
 </div>
 
 <a href="crypto.html" class="btn-3d">⬅ Back</a>
+
+<!-- Service Worker Registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log('Service Worker Registered'))
+    .catch(err => console.log(err));
+}
+</script>
 
 </body>
 </html>

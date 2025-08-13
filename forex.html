@@ -4,100 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forex Currencies</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004d40">
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(90deg, #004d40, #001f5c);
-    border-radius: 12px;
-    margin: 10px;
-  }
-  header h1 {
-    margin: 0;
-    color: white;
-  }
-  .search-bar {
-    max-width: 400px;
-    margin: 15px auto;
-    display: block;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-  }
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 15px;
-    padding: 20px;
-  }
-  .card {
-    background: #1a1a1a;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  .card:hover { transform: translateY(-5px); }
-  .card img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
-  }
-  .card h3 { color: #00ff88; }
-  /* Popup */
-  .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: silver;
-    color: black;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,255,0,0.7);
-    padding: 20px;
-    width: 90%;
-    max-width: 500px;
-    display: none;
-    z-index: 1000;
-  }
-  .popup h3 { margin-top: 0; }
-  .popup button {
-    background: linear-gradient(145deg, #00ff88, #00cc6a);
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #000;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  .close-popup {
-    background: red;
-    color: white;
-    margin-right: 10px;
-  }
-  .back-btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 8px 14px;
-    background: white;
-    color: black;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-  }
+  body { font-family: Arial, sans-serif; background:#111; color:#fff; margin:0; padding:0;}
+  header { text-align:center; padding:20px; background:linear-gradient(90deg,#004d40,#001f5c); border-radius:12px; margin:10px;}
+  header h1 { margin:0; color:white;}
+  .search-bar { max-width:400px; margin:15px auto; display:block; padding:10px; border-radius:8px; border:none; outline:none; font-size:16px;}
+  .cards-container { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:15px; padding:20px;}
+  .card { background:#1a1a1a; border-radius:15px; padding:20px; text-align:center; box-shadow:0 5px 15px rgba(0,255,136,0.3); transition:transform 0.3s ease; cursor:pointer;}
+  .card:hover { transform:translateY(-5px);}
+  .card img { width:80px; height:80px; object-fit:contain; margin-bottom:10px;}
+  .card h3 { color:#00ff88;}
+  .popup { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:silver; color:black; border-radius:12px; box-shadow:0 0 20px rgba(0,255,0,0.7); padding:20px; width:90%; max-width:500px; display:none; z-index:1000;}
+  .popup h3 { margin-top:0;}
+  .popup button { background:linear-gradient(145deg,#00ff88,#00cc6a); border:none; padding:10px 16px; border-radius:8px; cursor:pointer; color:#000; font-weight:bold; margin-top:10px;}
+  .close-popup { background:red; color:white; margin-right:10px;}
+  .back-btn { display:inline-block; margin:10px; padding:8px 14px; background:white; color:black; border-radius:8px; text-decoration:none; font-weight:bold;}
 </style>
 </head>
 <body>
@@ -159,41 +85,45 @@
 </div>
 
 <script>
-  const cards = document.querySelectorAll('.card');
-  const popup = document.getElementById('popup');
-  const popupTitle = document.getElementById('popupTitle');
-  const popupDesc = document.getElementById('popupDesc');
-  const closePopup = document.getElementById('closePopup');
-  const readMoreBtn = document.getElementById('readMoreBtn');
-  let currentLink = '';
+const cards = document.querySelectorAll('.card');
+const popup = document.getElementById('popup');
+const popupTitle = document.getElementById('popupTitle');
+const popupDesc = document.getElementById('popupDesc');
+const closePopup = document.getElementById('closePopup');
+const readMoreBtn = document.getElementById('readMoreBtn');
+let currentLink = '';
 
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    popupTitle.textContent = card.dataset.title;
+    popupDesc.textContent = card.dataset.desc;
+    currentLink = card.dataset.link;
+    popup.style.display = 'block';
+  });
+});
+
+closePopup.addEventListener('click', () => popup.style.display = 'none');
+
+readMoreBtn.addEventListener('click', () => {
+  if(currentLink) window.location.href = currentLink;
+});
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  const searchValue = this.value.toLowerCase();
   cards.forEach(card => {
-    card.addEventListener('click', () => {
-      popupTitle.textContent = card.dataset.title;
-      popupDesc.textContent = card.dataset.desc;
-      currentLink = card.dataset.link;
-      popup.style.display = 'block';
-    });
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    card.style.display = title.includes(searchValue) ? '' : 'none';
   });
+});
 
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
+// Service Worker registration
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered:', reg))
+      .catch(err => console.log('SW registration failed:', err));
   });
-
-  readMoreBtn.addEventListener('click', () => {
-    if (currentLink) {
-      window.location.href = currentLink;
-    }
-  });
-
-  // Search Functionality
-  document.getElementById('searchInput').addEventListener('input', function () {
-    const searchValue = this.value.toLowerCase();
-    cards.forEach(card => {
-      const title = card.querySelector('h3').textContent.toLowerCase();
-      card.style.display = title.includes(searchValue) ? '' : 'none';
-    });
-  });
+}
 </script>
 
 </body>

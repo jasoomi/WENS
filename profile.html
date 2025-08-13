@@ -1,170 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WENS — Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WENS — Profile</title>
 
-  <meta name="description" content="Your WENS Profile - Manage your information, preferences, and saved resources.">
-  <meta name="keywords" content="WENS profile, user profile, settings, account, West East North South">
-  <meta name="author" content="jasoomi-stack">
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004d40">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="WENS Profile - West East North South">
-  <meta property="og:description" content="Manage your information, preferences, and saved resources on WENS.">
-  <meta property="og:image" content="/icons/og-image-v2.jpeg">
-  <meta property="og:url" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/profile.html">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="WENS Profile - West East North South">
-  <meta name="twitter:description" content="Manage your information, preferences, and saved resources on WENS.">
-  <meta name="twitter:image" content="/icons/og-image-v2.jpeg">
-
-  <style>
-  
 <style>
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: black; /* Changed from #f4f4f4 to silver */
+    background-color: black;
     animation: fadeIn 0.8s ease-in-out;
   }
-  /* ...rest of your CSS unchanged... */
-
-    /* Updated header with homepage gradient + 3D shadow + animation */
-    header {
-      background: linear-gradient(to right, #001f3f, #ff0000, #008080);
-      color: white;
-      padding: 15px;
-      font-size: 1.5em;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 0 0 12px 12px;
-      position: relative;
-      box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -4px -4px 8px rgba(255,255,255,0.1);
-      transition: all 0.4s ease;
-    }
-    header:hover {
-      transform: translateY(-2px);
-      box-shadow: 6px 6px 12px rgba(0,0,0,0.5), -6px -6px 12px rgba(255,255,255,0.15);
-    }
-
-    .menu-icon {
-      font-size: 1.5em;
-      cursor: pointer;
-      user-select: none;
-      transition: transform 0.3s ease;
-    }
-    .menu-icon:hover {
-      transform: rotate(90deg);
-    }
-
-    /* Dropdown Menu */
-    .menu {
-      position: absolute;
-      top: 60px;
-      right: 10px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-    .menu a {
-      padding: 10px 15px;
-      text-decoration: none;
-      color: black;
-      border-bottom: 1px solid #ddd;
-      font-size: 1em;
-      transition: background 0.3s ease;
-    }
-    .menu a:hover {
-      background: #f0f0f0;
-    }
-
-    /* Updated container to match homepage card 3D look + hover effect */
-    .container {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 8px 8px 16px rgba(0,0,0,0.25),
-                  -8px -8px 16px rgba(255,255,255,0.4);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 0.6s ease-in-out;
-    }
-    .container:hover {
-      transform: translateY(-5px) rotateX(3deg) rotateY(-3deg);
-      box-shadow: 12px 12px 20px rgba(0,0,0,0.3),
-                  -12px -12px 20px rgba(255,255,255,0.5);
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid green;
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
-    }
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
-
-    input, button {
-      padding: 10px;
-      margin: 8px 0;
-      width: 100%;
-      max-width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-    #userName {
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      border: none;
-      background: #fff;
-    }
-    #userName:focus {
-      outline: none;
-      box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
-    }
-    button {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #218838;
-      transform: translateY(-2px);
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-  </style>
+  header {
+    background: linear-gradient(to right, #001f3f, #ff0000, #008080);
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 12px 12px;
+    position: relative;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.4), -4px -4px 8px rgba(255,255,255,0.1);
+    transition: all 0.4s ease;
+  }
+  header:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.5), -6px -6px 12px rgba(255,255,255,0.15);
+  }
+  .menu-icon { font-size: 1.5em; cursor: pointer; user-select: none; transition: transform 0.3s ease; }
+  .menu-icon:hover { transform: rotate(90deg); }
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    transition: background 0.3s ease;
+  }
+  .menu a:hover { background: #f0f0f0; }
+  .container {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px rgba(0,0,0,0.25),
+                -8px -8px 16px rgba(255,255,255,0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease-in-out;
+  }
+  .container:hover {
+    transform: translateY(-5px) rotateX(3deg) rotateY(-3deg);
+    box-shadow: 12px 12px 20px rgba(0,0,0,0.3),
+                -12px -12px 20px rgba(255,255,255,0.5);
+  }
+  .profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid green; margin-bottom: 10px; transition: transform 0.3s ease; }
+  .profile-pic:hover { transform: scale(1.05); }
+  input, button { padding: 10px; margin: 8px 0; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 5px; transition: all 0.3s ease; }
+  #userName { box-shadow: 2px 2px 5px rgba(0,0,0,0.3); border: none; background: #fff; }
+  #userName:focus { outline: none; box-shadow: 3px 3px 7px rgba(0,0,0,0.4); }
+  button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+  button:hover { background-color: #218838; transform: translateY(-2px); }
+  @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+  @keyframes fadeInUp { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
+</style>
 </head>
 <body>
 
@@ -179,10 +98,8 @@
 <div class="container">
   <img id="profileImage" class="profile-pic" src="" alt="Profile Picture">
   <input type="file" id="imageUpload" accept="image/*">
-
   <input type="text" id="userName" placeholder="Enter your name" required>
   <input type="date" id="dob" required>
-
   <button id="saveBtn">Save Profile</button>
 </div>
 
@@ -199,7 +116,6 @@
     const savedName = localStorage.getItem("profileName");
     const savedDob = localStorage.getItem("profileDob");
     const savedImage = localStorage.getItem("profileImage");
-
     if (savedName) userName.value = savedName;
     if (savedDob) dob.value = savedDob;
     if (savedImage) profileImage.src = savedImage;
@@ -213,25 +129,27 @@
     const file = this.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = function(e) {
-        profileImage.src = e.target.result;
-      };
+      reader.onload = function(e) { profileImage.src = e.target.result; };
       reader.readAsDataURL(file);
     }
   });
 
   saveBtn.addEventListener("click", function() {
-    if (!userName.value.trim() || !dob.value) {
-      alert("Please fill in all fields.");
-      return;
-    }
+    if (!userName.value.trim() || !dob.value) { alert("Please fill in all fields."); return; }
     localStorage.setItem("profileName", userName.value.trim());
     localStorage.setItem("profileDob", dob.value);
-    if (profileImage.src) {
-      localStorage.setItem("profileImage", profileImage.src);
-    }
+    if (profileImage.src) localStorage.setItem("profileImage", profileImage.src);
     alert("Profile saved successfully!");
   });
+
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('ServiceWorker registered:', reg.scope))
+        .catch(err => console.log('ServiceWorker failed:', err));
+    });
+  }
 </script>
 
 </body>

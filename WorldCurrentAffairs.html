@@ -1,106 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Current Affairs - WENS</title>
-  <meta name="description" content="Stay updated with the latest world current affairs from WENS.">
-  <meta name="keywords" content="world news, current affairs, WENS, global events, international news">
-  <meta name="author" content="jasoomi-stack">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#C0C0C0">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: silver; }
-    header { background: linear-gradient(90deg, #004d40, #001f5c); color: white; padding: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 12px; max-width: 95%; margin: 1rem auto; }
-    header svg { height: 60px; width: 60px; animation: spin-slow 10s linear infinite; }
-    @keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    .back-home { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(145deg, #ffffff, #d1d1d1); border-radius: 10px; padding: 8px 14px; font-weight: bold; text-decoration: none; color: #333; margin: 10px 0 0 15px; position: sticky; top: 15px; z-index: 1000; }
-    .search-container { display: flex; justify-content: center; margin: 20px; }
-    .search-container input { width: 90%; max-width: 500px; padding: 10px 15px; border-radius: 25px; border: none; font-size: 1rem; }
-    .news-card { background: white; border-radius: 12px; padding: 1rem; margin: 1rem 0; box-shadow: 0 8px 15px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; gap: 15px; }
-    .news-card img { width: 60px; height: 40px; border-radius: 6px; object-fit: cover; }
-    .news-card:hover { transform: scale(1.02); }
-    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; z-index: 999; }
-    .popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: silver; border-radius: 12px; box-shadow: 0 0 20px rgba(0,255,0,0.7); padding: 20px; max-width: 90%; width: 300px; display: none; z-index: 1000; overflow-y: auto; max-height: 90%; }
-    .popup button { background: white; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; }
-    footer { text-align: center; padding: 1rem; background: #f4f4f4; }
-    @media (min-width: 600px) { .popup { width: 400px; } }
-    @media (min-width: 900px) { .popup { width: 500px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Current Affairs - WENS</title>
+<meta name="description" content="Stay updated with the latest world current affairs from WENS.">
+<meta name="keywords" content="world news, current affairs, WENS, global events, international news">
+<meta name="author" content="jasoomi-stack">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#C0C0C0">
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: silver; }
+  header { background: linear-gradient(90deg, #004d40, #001f5c); color: white; padding: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 12px; max-width: 95%; margin: 1rem auto; }
+  header svg { height: 60px; width: 60px; animation: spin-slow 10s linear infinite; }
+  @keyframes spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  .back-home { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(145deg, #ffffff, #d1d1d1); border-radius: 10px; padding: 8px 14px; font-weight: bold; text-decoration: none; color: #333; margin: 10px 0 0 15px; position: sticky; top: 15px; z-index: 1000; }
+  .search-container { display: flex; justify-content: center; margin: 20px; }
+  .search-container input { width: 90%; max-width: 500px; padding: 10px 15px; border-radius: 25px; border: none; font-size: 1rem; }
+  .news-card { background: white; border-radius: 12px; padding: 1rem; margin: 1rem 0; box-shadow: 0 8px 15px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; gap: 15px; }
+  .news-card img { width: 60px; height: 40px; border-radius: 6px; object-fit: cover; }
+  .news-card:hover { transform: scale(1.02); }
+  .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; z-index: 999; }
+  .popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: silver; border-radius: 12px; box-shadow: 0 0 20px rgba(0,255,0,0.7); padding: 20px; max-width: 90%; width: 300px; display: none; z-index: 1000; overflow-y: auto; max-height: 90%; }
+  .popup button { background: white; border: none; padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+  footer { text-align: center; padding: 1rem; background: #f4f4f4; }
+  @media (min-width: 600px) { .popup { width: 400px; } }
+  @media (min-width: 900px) { .popup { width: 500px; } }
+</style>
 </head>
 <body>
-  <header>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" fill="url(#grad)">
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#1e90ff"/>
-          <stop offset="100%" style="stop-color:#32cd32"/>
-        </linearGradient>
-      </defs>
-      <circle cx="248" cy="248" r="240" />
-    </svg>
-    <h1>World Current Affairs</h1>
-  </header>
 
-  <a href="index.html" class="back-home">⬅ Back Home</a>
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" fill="url(#grad)">
+    <defs>
+      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#1e90ff"/>
+        <stop offset="100%" style="stop-color:#32cd32"/>
+      </linearGradient>
+    </defs>
+    <circle cx="248" cy="248" r="240" />
+  </svg>
+  <h1>World Current Affairs</h1>
+</header>
 
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Search news...">
+<a href="index.html" class="back-home">⬅ Back Home</a>
+
+<div class="search-container">
+  <input type="text" id="search" placeholder="Search news...">
+</div>
+
+<main>
+  <h2>Countries</h2>
+  <div id="news-list">
+    <div class="news-card" data-file="USA.html"><img src="flags/us.png"><div><h3>USA</h3></div></div>
+    <div class="news-card" data-file="China.html"><img src="flags/cn.png"><div><h3>China</h3></div></div>
+    <div class="news-card" data-file="india.html"><img src="flags/in.png"><div><h3>India</h3></div></div>
+    <div class="news-card" data-file="pakistan.html"><img src="flags/pk.png"><div><h3>Pakistan</h3></div></div>
+    <div class="news-card" data-file="germany.html"><img src="flags/de.png"><div><h3>Germany</h3></div></div>
+    <div class="news-card" data-file="france.html"><img src="flags/fr.png"><div><h3>France</h3></div></div>
+    <div class="news-card" data-file="uk.html"><img src="flags/gb.png"><div><h3>UK</h3></div></div>
+    <div class="news-card" data-file="russia.html"><img src="flags/ru.png"><div><h3>Russia</h3></div></div>
+    <div class="news-card" data-file="japan.html"><img src="flags/jp.png"><div><h3>Japan</h3></div></div>
   </div>
+</main>
 
-  <main>
-    <h2>Countries</h2>
-    <div id="news-list">
-      <div class="news-card" data-file="USA.html"><img src="flags/us.png"><div><h3>USA</h3></div></div>
-      <div class="news-card" data-file="China.html"><img src="flags/cn.png"><div><h3>China</h3></div></div>
-      <div class="news-card" data-file="india.html"><img src="flags/in.png"><div><h3>India</h3></div></div>
-      <div class="news-card" data-file="pakistan.html"><img src="flags/pk.png"><div><h3>Pakistan</h3></div></div>
-      <div class="news-card" data-file="germany.html"><img src="flags/de.png"><div><h3>Germany</h3></div></div>
-      <div class="news-card" data-file="france.html"><img src="flags/fr.png"><div><h3>France</h3></div></div>
-      <div class="news-card" data-file="uk.html"><img src="flags/gb.png"><div><h3>UK</h3></div></div>
-      <div class="news-card" data-file="russia.html"><img src="flags/ru.png"><div><h3>Russia</h3></div></div>
-      <div class="news-card" data-file="japan.html"><img src="flags/jp.png"><div><h3>Japan</h3></div></div>
-    </div>
-  </main>
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+  <div id="popupContent"></div>
+  <button id="closePopup">Close</button>
+</div>
 
-  <div class="overlay" id="overlay"></div>
-  <div class="popup" id="popup">
-    <div id="popupContent"></div>
-    <button id="closePopup">Close</button>
-  </div>
+<footer>&copy; 2025 WENS — Built with SPCK</footer>
 
-  <footer>&copy; 2025 WENS — Built with SPCK</footer>
-
-  <script>
-    const cards = document.querySelectorAll('.news-card');
-    const popup = document.getElementById('popup');
-    const popupContent = document.getElementById('popupContent');
-    const closePopup = document.getElementById('closePopup');
-    const overlay = document.getElementById('overlay');
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const file = card.getAttribute('data-file');
-        fetch(file)
-          .then(res => res.text())
-          .then(html => {
-            popupContent.innerHTML = html;
-            popup.style.display = 'block';
-            overlay.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-          });
-      });
+<script>
+  // Search filter
+  document.getElementById("search").addEventListener("input", function() {
+    let filter = this.value.toLowerCase();
+    document.querySelectorAll(".news-card").forEach(card => {
+      card.style.display = card.querySelector("h3").textContent.toLowerCase().includes(filter) ? "" : "none";
     });
+  });
 
-    function closeModal() {
-      popup.style.display = 'none';
-      overlay.style.display = 'none';
-      popupContent.innerHTML = '';
-      document.body.style.overflow = '';
-    }
+  // Popup news display
+  const cards = document.querySelectorAll('.news-card');
+  const popup = document.getElementById('popup');
+  const popupContent = document.getElementById('popupContent');
+  const closePopup = document.getElementById('closePopup');
+  const overlay = document.getElementById('overlay');
 
-    closePopup.addEventListener('click', closeModal);
-    overlay.addEventListener('click', closeModal);
-  </script>
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const file = card.getAttribute('data-file');
+      fetch(file)
+        .then(res => res.text())
+        .then(html => {
+          popupContent.innerHTML = html;
+          popup.style.display = 'block';
+          overlay.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+        });
+    });
+  });
+
+  function closeModal() {
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+    popupContent.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  closePopup.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  // Register service worker for PWA support
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('Service Worker registered:', reg.scope))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  }
+</script>
+
 </body>
 </html>

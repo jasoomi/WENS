@@ -1,194 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trade & Crypto - WENS</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #000; /* Dark black background */
-      color: white;
-    }
-    header {
-      background: linear-gradient(90deg, #004d40, #001f5c);
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      border-radius: 12px;
-      max-width: 95%;
-      margin: 1rem auto;
-    }
-    header svg {
-      height: 60px;
-      width: 60px;
-      animation: spin-slow 10s linear infinite;
-    }
-    @keyframes spin-slow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(145deg, #ffffff, #d1d1d1);
-      border-radius: 10px;
-      padding: 8px 14px;
-      box-shadow: 4px 4px 8px rgba(0,0,0,0.2),
-                  -4px -4px 8px rgba(255,255,255,0.6);
-      font-weight: bold;
-      text-decoration: none;
-      color: #333;
-      margin: 10px 0 0 15px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      position: sticky;
-      top: 15px;
-      z-index: 1000;
-    }
-    .back-home:hover {
-      transform: translateY(-3px);
-      box-shadow: 6px 6px 12px rgba(0,0,0,0.25),
-                  -6px -6px 12px rgba(255,255,255,0.7);
-    }
-    .search-bar {
-      display: block;
-      width: 90%;
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 10px 15px;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      outline: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .silver-container {
-      border-radius: 15px;
-      padding: 1.5rem;
-      margin: 1rem 0;
-    }
-    .lesson-card {
-      background: #111;
-      border-radius: 12px;
-      padding: 1rem;
-      margin: 1rem 0;
-      box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-    }
-    .lesson-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 0 25px rgba(0, 255, 136, 0.9);
-    }
-    .lesson-card h3 {
-      color: #00ff88;
-    }
-    .lesson-card p {
-      color: #ccc;
-    }
-    /* 3D White Button */
-    .btn-3d {
-      background: linear-gradient(145deg, #ffffff, #d1d1d1);
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 15px;
-      box-shadow: 0 5px #aaa;
-      transition: all 0.2s ease;
-    }
-    .btn-3d:active {
-      transform: translateY(4px);
-      box-shadow: 0 1px #aaa;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #111;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trade & Crypto - WENS</title>
+<meta name="description" content="Explore Trade & Crypto categories - Forex, Stocks, Cryptocurrencies, NFTs, and more.">
+<meta name="theme-color" content="#004d40">
+<link rel="manifest" href="manifest.json">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: white;
+  }
+  header {
+    background: linear-gradient(90deg, #004d40, #001f5c);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    max-width: 95%;
+    margin: 1rem auto;
+  }
+  header svg { height:60px; width:60px; animation: spin-slow 10s linear infinite; }
+  @keyframes spin-slow {0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);}}
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(145deg, #ffffff, #d1d1d1);
+    border-radius: 10px;
+    padding: 8px 14px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2), -4px -4px 8px rgba(255,255,255,0.6);
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    margin: 10px 0 0 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+  }
+  .back-home:hover { transform: translateY(-3px); box-shadow: 6px 6px 12px rgba(0,0,0,0.25), -6px -6px 12px rgba(255,255,255,0.7); }
+  .search-bar {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .silver-container { border-radius: 15px; padding: 1.5rem; margin: 1rem 0; }
+  .lesson-card {
+    background: #111;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .lesson-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 0 25px rgba(0, 255, 136, 0.9); }
+  .lesson-card h3 { color: #00ff88; }
+  .lesson-card p { color: #ccc; }
+  .btn-3d {
+    background: linear-gradient(145deg, #ffffff, #d1d1d1);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    box-shadow: 0 5px #aaa;
+    transition: all 0.2s ease;
+  }
+  .btn-3d:active { transform: translateY(4px); box-shadow: 0 1px #aaa; }
+  footer { text-align: center; padding: 1rem; background: #111; font-size: 0.9rem; color: #aaa; }
+</style>
 </head>
 <body>
 
-  <header>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" fill="url(#grad)">
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#1e90ff;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#32cd32;stop-opacity:1" />
-        </linearGradient>
-      </defs>
-      <circle cx="248" cy="248" r="240" />
-    </svg>
-    <h1>Trade & Crypto</h1>
-  </header>
+<header>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496" fill="url(#grad)">
+    <defs>
+      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#1e90ff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#32cd32;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="248" cy="248" r="240" />
+  </svg>
+  <h1>Trade & Crypto</h1>
+</header>
 
-  <a href="javascript:history.back()" class="back-home">&#8592; Back</a>
+<a href="javascript:history.back()" class="back-home">&#8592; Back</a>
 
-  <input type="text" id="search" class="search-bar" placeholder="Search categories...">
+<input type="text" id="search" class="search-bar" placeholder="Search categories...">
 
-  <main>
-    <div class="silver-container">
-      <a href="cryptocurrency.html" style="text-decoration:none;">
-        <div class="lesson-card" data-title="Cryptocurrencies">
-          <h3>Cryptocurrencies</h3>
-          <p>Bitcoin, Ethereum, and other blockchain-based assets.</p>
-          <a href="criptocurrencies.html" class="btn-3d">View</a>
-        </div>
-      </a>
-      <div class="lesson-card" data-title="Stock Market">
-        <h3>Stock Market</h3>
-        <p>Trading company shares, indexes, and ETFs.</p>
-        <a href="#" class="btn-3d">View</a>
+<main>
+  <div class="silver-container">
+    <a href="cryptocurrency.html" style="text-decoration:none;">
+      <div class="lesson-card" data-title="Cryptocurrencies">
+        <h3>Cryptocurrencies</h3>
+        <p>Bitcoin, Ethereum, and other blockchain-based assets.</p>
+        <a href="cryptocurrencies.html" class="btn-3d">View</a>
       </div>
-      <div class="lesson-card" data-title="Forex">
-        <h3>Forex</h3>
-        <p>Foreign exchange trading between global currencies.</p>
-        <a href="#" class="btn-3d">View</a>
-      </div>
-      <div class="lesson-card" data-title="Commodities">
-        <h3>Commodities</h3>
-        <p>Gold, oil, agricultural products, and more.</p>
-        <a href="#" class="btn-3d">View</a>
-      </div>
-      <div class="lesson-card" data-title="NFTs & Digital Assets">
-        <h3>NFTs & Digital Assets</h3>
-        <p>Unique blockchain collectibles and tokenized assets.</p>
-        <a href="#" class="btn-3d">View</a>
-      </div>
-      <div class="lesson-card" data-title="Trading Strategies">
-        <h3>Trading Strategies</h3>
-        <p>Learn risk management and market analysis techniques.</p>
-        <a href="#" class="btn-3d">View</a>
-      </div>
+    </a>
+    <div class="lesson-card" data-title="Stock Market">
+      <h3>Stock Market</h3>
+      <p>Trading company shares, indexes, and ETFs.</p>
+      <a href="#" class="btn-3d">View</a>
     </div>
-  </main>
+    <div class="lesson-card" data-title="Forex">
+      <h3>Forex</h3>
+      <p>Foreign exchange trading between global currencies.</p>
+      <a href="#" class="btn-3d">View</a>
+    </div>
+    <div class="lesson-card" data-title="Commodities">
+      <h3>Commodities</h3>
+      <p>Gold, oil, agricultural products, and more.</p>
+      <a href="#" class="btn-3d">View</a>
+    </div>
+    <div class="lesson-card" data-title="NFTs & Digital Assets">
+      <h3>NFTs & Digital Assets</h3>
+      <p>Unique blockchain collectibles and tokenized assets.</p>
+      <a href="#" class="btn-3d">View</a>
+    </div>
+    <div class="lesson-card" data-title="Trading Strategies">
+      <h3>Trading Strategies</h3>
+      <p>Learn risk management and market analysis techniques.</p>
+      <a href="#" class="btn-3d">View</a>
+    </div>
+  </div>
+</main>
 
-  <footer>
-    &copy; 2025 WENS — Built with SPCK
-  </footer>
+<footer>
+  &copy; 2025 WENS — Built with SPCK
+</footer>
 
-  <script>
-    document.getElementById("search").addEventListener("input", function() {
-      let filter = this.value.toLowerCase();
-      let cards = document.querySelectorAll(".lesson-card");
-      cards.forEach(card => {
-        let title = card.getAttribute("data-title").toLowerCase();
-        card.style.display = title.includes(filter) ? "" : "none";
-      });
+<script>
+  // Search filter
+  document.getElementById("search").addEventListener("input", function() {
+    let filter = this.value.toLowerCase();
+    document.querySelectorAll(".lesson-card").forEach(card => {
+      let title = card.getAttribute("data-title").toLowerCase();
+      card.style.display = title.includes(filter) ? "" : "none";
     });
-  </script>
+  });
+
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      console.log('SW registered:', reg.scope);
+    }).catch(err => console.error('SW registration failed:', err));
+  }
+</script>
 
 </body>
 </html>

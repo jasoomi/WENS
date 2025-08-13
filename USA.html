@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>USA</title>
+<meta name="theme-color" content="#00ff88">
+<link rel="manifest" href="manifest.json">
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -49,6 +51,15 @@ p { color: #ccc; }
 </div>
 
 <a href="WorldCurrentAffairs.html" class="btn-3d">⬅ Back</a>
+
+<script>
+  // Register service worker for PWA support
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('Service Worker registered:', reg.scope))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  }
+</script>
 
 </body>
 </html>

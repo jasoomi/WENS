@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Russia</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#C0C0C0">
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -49,6 +54,17 @@ p { color: #ccc; }
 </div>
 
 <a href="WorldCurrentAffairs.html" class="btn-3d">⬅ Back</a>
+
+<script>
+  // Register Service Worker for offline support
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('ServiceWorker registered:', reg.scope))
+        .catch(err => console.log('ServiceWorker failed:', err));
+    });
+  }
+</script>
 
 </body>
 </html>

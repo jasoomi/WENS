@@ -4,8 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EUR/GBP</title>
+
+<!-- PWA meta -->
+<meta name="theme-color" content="#111" />
+<link rel="manifest" href="manifest.json" />
+
 <style>
-  /* Bitcoin.html style (dark + green accents) */
+  /* Dark + green accents style */
   body {
     font-family: Arial, sans-serif;
     background: #111;
@@ -78,7 +83,6 @@
 <body>
 
   <div class="header-card" role="region" aria-label="EUR/GBP overview">
-    <!-- replace the src with your local logo path if needed -->
     <img src="../images/forex/eurgbp.png" alt="EUR/GBP logo" class="pair-logo" />
     <h1>EUR/GBP</h1>
 
@@ -89,9 +93,21 @@
 
     <div class="meta">Major influences: ECB &amp; BOE decisions, Eurozone &amp; UK economic data, geopolitical events.</div>
 
-    <!-- Back to forex index -->
     <a class="btn-3d" href="../forex.html" title="Back to Forex">⬅ Back</a>
   </div>
+
+  <!-- Service worker registration for offline & APK support -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(reg => {
+          console.log('Service Worker registered:', reg);
+        }).catch(err => {
+          console.warn('Service Worker registration failed:', err);
+        });
+      });
+    }
+  </script>
 
 </body>
 </html>

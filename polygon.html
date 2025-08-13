@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Polygon (MATIC)</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004d40">
+
 <style>
 body { font-family: Arial, sans-serif; background: #111; color: #fff; margin: 0; padding: 0; text-align: center; }
 .header-card { background: #1a1a1a; border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 400px; box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); transition: transform 0.3s ease; }
@@ -24,6 +29,17 @@ p { color: #ccc; }
 </div>
 
 <a href="crypto.html" class="btn-3d">⬅ Back</a>
+
+<script>
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('ServiceWorker registered:', reg.scope))
+        .catch(err => console.log('ServiceWorker failed:', err));
+    });
+  }
+</script>
 
 </body>
 </html>

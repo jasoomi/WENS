@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Binance Coin (BNB)</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Optional SEO / Social Sharing -->
+<meta name="description" content="Binance Coin (BNB): native cryptocurrency of Binance, one of the world's largest crypto exchanges.">
+<meta property="og:title" content="Binance Coin (BNB)">
+<meta property="og:description" content="The native cryptocurrency of Binance, one of the world's largest cryptocurrency exchanges.">
+<meta property="og:image" content="images/crypto/bnb.png">
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -49,6 +59,15 @@ p { color: #ccc; }
 </div>
 
 <a href="crypto.html" class="btn-3d">⬅ Back</a>
+
+<!-- ✅ Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.error('SW registration failed:', err));
+  }
+</script>
 
 </body>
 </html>

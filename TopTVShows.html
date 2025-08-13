@@ -4,8 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Top TV Shows - WENS</title>
+
+  <!-- SEO & PWA -->
   <meta name="description" content="Discover the top TV shows currently trending on WENS.">
   <meta name="theme-color" content="#C0C0C0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  
+  <!-- No cache for auto-update -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: silver; color: #000; min-height: 100vh; }
     header { background: linear-gradient(90deg, #004d40, #001f5c); padding: 1rem; text-align: center; border-radius: 12px; max-width: 95%; margin: 1rem auto; color: white; box-shadow: 0 4px 10px rgba(0, 255, 128, 0.5); }
@@ -34,5 +46,17 @@
       <div class="news-card">Sample Show 3</div>
     </div>
   </main>
+
+  <!-- Service Worker for PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').then(
+          function(registration) { console.log('SW registered: ', registration); },
+          function(err) { console.log('SW registration failed: ', err); }
+        );
+      });
+    }
+  </script>
 </body>
 </html>

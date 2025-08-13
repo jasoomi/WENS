@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Germany</title>
+<meta name="description" content="Germany's political, economic, and cultural headlines.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004d40">
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -24,9 +27,11 @@ body {
 }
 .header-card:hover { transform: translateY(-5px); }
 .crypto-logo { width: 100px; height: 100px; object-fit: contain; }
-h1 { color: #00ff88; }
-p { color: #ccc; }
+h1 { color: #00ff88; margin: 10px 0; }
+p { color: #ccc; line-height: 1.5; }
 .btn-3d {
+  display: inline-block;
+  margin: 20px auto;
   background: linear-gradient(145deg, #00ff88, #00cc6a);
   color: #000;
   padding: 10px 20px;
@@ -34,10 +39,12 @@ p { color: #ccc; }
   text-decoration: none;
   font-weight: bold;
   box-shadow: 0 5px #00994d;
-  transition: all 0.2s ease;
-  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-3d:active { transform: translateY(4px); box-shadow: 0 1px #00994d; }
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px #00994d;
+}
 </style>
 </head>
 <body>
@@ -49,6 +56,15 @@ p { color: #ccc; }
 </div>
 
 <a href="WorldCurrentAffairs.html" class="btn-3d">⬅ Back</a>
+
+<script>
+// Register Service Worker for offline PWA
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log('Service Worker Registered for Germany page'))
+    .catch(err => console.error('SW registration failed:', err));
+}
+</script>
 
 </body>
 </html>

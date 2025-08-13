@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pakistan</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00ff88">
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -49,6 +54,19 @@ p { color: #ccc; }
 </div>
 
 <a href="WorldCurrentAffairs.html" class="btn-3d">⬅ Back</a>
+
+<!-- Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      console.log('ServiceWorker registered with scope:', reg.scope);
+    }).catch(function(err) {
+      console.log('ServiceWorker registration failed:', err);
+    });
+  });
+}
+</script>
 
 </body>
 </html>

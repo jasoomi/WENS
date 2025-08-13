@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitcoin (BTC)</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Optional SEO / Social Sharing -->
+<meta name="description" content="Bitcoin (BTC): The first and most popular cryptocurrency, with price history and daily updates.">
+<meta property="og:title" content="Bitcoin (BTC)">
+<meta property="og:description" content="The first and most popular cryptocurrency, created by Satoshi Nakamoto in 2009.">
+<meta property="og:image" content="images/crypto/btc.png">
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -71,12 +81,20 @@ table, th, td { border: 1px solid #00ff88; padding: 5px 10px; }
     </thead>
     <tbody>
       <!-- GitHub Actions will append daily updates here -->
-      
     </tbody>
   </table>
 </div>
 
 <a href="crypto.html" class="btn-3d">⬅ Back</a>
+
+<!-- ✅ Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.error('SW registration failed:', err));
+  }
+</script>
 
 <script>
 async function loadPrice() {

@@ -1,127 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#C0C0C0">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WENS Resources - West East North South</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WENS Resources - West East North South</title>
 
-  <!-- SEO -->
-  <meta name="description" content="WENS Resources - Access global tools, articles, and references for learning and collaboration.">
-  <meta name="keywords" content="WENS resources, global tools, articles, learning resources, West East North South">
-  <meta name="author" content="jasoomi-stack">
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#C0C0C0">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="WENS Resources - West East North South">
-  <meta property="og:description" content="Access global tools, articles, and references for learning and collaboration.">
-  <meta property="og:image" content="/icons/og-image-v2.jpeg">
-  <meta property="og:url" content="https://jasoomi-stack.github.io/WENS-West-East-North-South/resources.html">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="WENS Resources - West East North South">
-  <meta name="twitter:description" content="Access global tools, articles, and references for learning and collaboration.">
-  <meta name="twitter:image" content="/icons/og-image-v2.jpeg">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: silver;
-    }
-
-    /* Silver 3D Base */
-    .silver-3d {
-      background: linear-gradient(145deg, #dcdcdc, #ffffff);
-      border-radius: 14px;
-      box-shadow: 10px 10px 20px rgba(0,0,0,0.25),
-                  -10px -10px 20px rgba(255,255,255,0.7),
-                  inset 0 1px 2px rgba(255,255,255,0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .silver-3d:hover {
-      transform: translateY(-4px);
-      box-shadow: 12px 12px 25px rgba(0,0,0,0.3),
-                  -12px -12px 25px rgba(255,255,255,0.8),
-                  inset 0 2px 4px rgba(255,255,255,0.5);
-    }
-
-    /* Header */
-    header {
-      padding: 1rem 2rem;
-      max-width: 95%;
-      margin: 1rem auto;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      color: #333;
-      font-weight: bold;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-      color: #555;
-    }
-    header svg {
-      width: 60px;
-      height: 60px;
-      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
-    }
-
-    /* File container */
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .file-link {
-      display: block;
-      padding: 12px;
-      text-align: center;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-  </style>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: silver;
+  }
+  /* Silver 3D Base */
+  .silver-3d {
+    background: linear-gradient(145deg, #dcdcdc, #ffffff);
+    border-radius: 14px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.25),
+                -10px -10px 20px rgba(255,255,255,0.7),
+                inset 0 1px 2px rgba(255,255,255,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .silver-3d:hover {
+    transform: translateY(-4px);
+    box-shadow: 12px 12px 25px rgba(0,0,0,0.3),
+                -12px -12px 25px rgba(255,255,255,0.8),
+                inset 0 2px 4px rgba(255,255,255,0.5);
+  }
+  header {
+    padding: 1rem 2rem;
+    max-width: 95%;
+    margin: 1rem auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  header h1 { margin: 0; font-size: 1.8rem; color: #333; font-weight: bold; }
+  header p { margin: 0.5rem 0 0; color: #555; }
+  header svg { width: 60px; height: 60px; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4)); }
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .file-link {
+    display: block;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
-  <header class="silver-3d">
-    <!-- Blue-Green Earth Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
-      <circle cx="248" cy="248" r="248" fill="url(#grad)"/>
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#2e8b57;stop-opacity:1" />
-        </linearGradient>
-      </defs>
-    </svg>
-    <h1>WENS</h1>
-    <p>Download your learning materials here</p>
-  </header>
 
-  <div class="container">
-    <a href="files/sample.pdf" class="file-link silver-3d" download>📄 Sample PDF</a>
-    <a href="files/example.zip" class="file-link silver-3d" download>📦 Example ZIP</a>
-    <a href="index.html" class="file-link silver-3d">⬅ Back to Home</a>
-  </div>
+<header class="silver-3d">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+    <circle cx="248" cy="248" r="248" fill="url(#grad)"/>
+    <defs>
+      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#00bfff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#2e8b57;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <h1>WENS</h1>
+  <p>Download your learning materials here</p>
+</header>
+
+<div class="container">
+  <a href="files/sample.pdf" class="file-link silver-3d" download>📄 Sample PDF</a>
+  <a href="files/example.zip" class="file-link silver-3d" download>📦 Example ZIP</a>
+  <a href="index.html" class="file-link silver-3d">⬅ Back to Home</a>
+</div>
+
+<script>
+  // Register Service Worker for offline caching
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('ServiceWorker registered:', reg.scope))
+        .catch(err => console.log('ServiceWorker failed:', err));
+    });
+  }
+</script>
 
 </body>
 </html>

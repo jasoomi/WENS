@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EUR/USD</title>
+
+<!-- PWA / APK support -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111">
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -49,6 +54,17 @@ p { color: #ccc; }
 </div>
 
 <a href="forex.html" class="btn-3d">⬅ Back</a>
+
+<!-- Register service worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered:', reg))
+      .catch(err => console.log('SW registration failed:', err));
+  });
+}
+</script>
 
 </body>
 </html>

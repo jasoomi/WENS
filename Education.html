@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Complete Science & Technology Education</title>
+
+<!-- PWA Support -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#004d40">
+
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -12,10 +17,29 @@ body {
     background-color: #111;
     color: #fff;
 }
+
+/* Header */
 h1, h2 {
     text-align: center;
     margin: 20px 0;
 }
+
+/* Search Bar */
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+.search-bar input {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+/* Section styling */
 .section {
     padding: 30px 20px;
 }
@@ -25,16 +49,19 @@ h1, h2 {
     justify-content: center;
     gap: 20px;
 }
+
+/* Card Styling */
 .card {
     background-color: #1a1a1a;
     border-radius: 15px;
     padding: 20px;
     width: 300px;
     box-shadow: 0 0 15px rgba(0,255,255,0.2);
-    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
-    box-shadow: 0 0 30px rgba(0,255,255,0.5);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 25px rgba(0,255,255,0.5);
 }
 .card img {
     width: 100%;
@@ -52,26 +79,27 @@ h1, h2 {
     line-height: 1.5;
     color: #ccc;
 }
-/* Collapsible content */
+
+/* Collapsible Cards */
 .card.collapsible .content {
-    display: none;
-    padding-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
 }
 .card.collapsible.active .content {
-    display: block;
+    max-height: 500px;
 }
 .card.collapsible {
     cursor: pointer;
 }
 
-/* 3D effect for header cards */
-.header-card {
+/* Header Card 3D Hover */
+.card.header-card {
     background-color: #222;
     perspective: 1000px;
     transform-style: preserve-3d;
-    transition: transform 0.5s, box-shadow 0.5s;
 }
-.header-card:hover {
+.card.header-card:hover {
     transform: rotateY(15deg) rotateX(5deg) scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 255, 255, 0.6);
 }
@@ -89,6 +117,11 @@ h1, h2 {
 
 <h1>Complete Science & Technology Education</h1>
 
+<!-- Search Bar -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search topic...">
+</div>
+
 <!-- Physics Section -->
 <div class="section physics">
     <h2>Physics</h2>
@@ -97,7 +130,6 @@ h1, h2 {
             <h3>Physics</h3>
             <p>Physics is the natural science that studies matter, energy, and the fundamental forces of the universe.</p>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Newton%27s_laws_of_motion.png" alt="Mechanics">
             <h3>Mechanics</h3>
@@ -112,7 +144,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Thermodynamics_graph.png" alt="Thermodynamics">
             <h3>Thermodynamics</h3>
@@ -126,7 +157,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Electromagnetism.png" alt="Electromagnetism">
             <h3>Electromagnetism</h3>
@@ -150,7 +180,6 @@ h1, h2 {
             <h3>Chemistry</h3>
             <p>Chemistry studies matter, its composition, structure, properties, and reactions.</p>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Chemistry_symbols.png" alt="Organic Chemistry">
             <h3>Organic Chemistry</h3>
@@ -162,7 +191,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Periodic_table_large.png" alt="Inorganic Chemistry">
             <h3>Inorganic Chemistry</h3>
@@ -173,7 +201,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Chemical_bonds.png" alt="Physical Chemistry">
             <h3>Physical Chemistry</h3>
@@ -196,7 +223,6 @@ h1, h2 {
             <h3>Biology</h3>
             <p>Biology studies living organisms, their structure, function, growth, and evolution.</p>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/DNA_chemical_structure.png" alt="Genetics">
             <h3>Genetics</h3>
@@ -208,7 +234,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Cell_diagram.png" alt="Cell Biology">
             <h3>Cell Biology</h3>
@@ -219,7 +244,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Ecosystem.jpg" alt="Ecology">
             <h3>Ecology</h3>
@@ -241,7 +265,6 @@ h1, h2 {
             <h3>Mathematics</h3>
             <p>Study of numbers, quantities, shapes, and patterns.</p>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Mathematics_symbols.png" alt="Algebra">
             <h3>Algebra</h3>
@@ -253,7 +276,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Calculus_graph.png" alt="Calculus">
             <h3>Calculus</h3>
@@ -276,7 +298,6 @@ h1, h2 {
             <h3>Computer Science</h3>
             <p>Studies algorithms, computation, and information processing systems.</p>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Flowchart_example.png" alt="Algorithms">
             <h3>Algorithms</h3>
@@ -287,7 +308,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Database-modeling-entity-relationship-diagram.png" alt="Databases">
             <h3>Databases</h3>
@@ -301,7 +321,7 @@ h1, h2 {
     </div>
 </div>
 
-<!-- Digital/Technology Section -->
+<!-- Digital Section -->
 <div class="section digital">
     <h2>Digital & Technology</h2>
     <div class="cards">
@@ -309,7 +329,6 @@ h1, h2 {
             <h3>Digital Technology</h3>
             <p>Study of electronic systems, digital devices, and modern computing applications.</p>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/IoT.png" alt="IoT">
             <h3>Internet of Things (IoT)</h3>
@@ -320,7 +339,6 @@ h1, h2 {
                 </ul>
             </div>
         </div>
-
         <div class="card collapsible">
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Artificial-intelligence.png" alt="AI">
             <h3>Artificial Intelligence</h3>
@@ -338,8 +356,16 @@ h1, h2 {
 // Collapsible cards
 const collapsibles = document.querySelectorAll('.card.collapsible');
 collapsibles.forEach(card => {
-    card.addEventListener('click', () => {
-        card.classList.toggle('active');
+    card.addEventListener('click', () => card.classList.toggle('active'));
+});
+
+// Search Functionality
+document.getElementById('searchInput').addEventListener('input', function() {
+    const filter = this.value.toLowerCase();
+    const allCards = document.querySelectorAll('.card.collapsible, .card.header-card');
+    allCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? 'block' : 'none';
     });
 });
 </script>

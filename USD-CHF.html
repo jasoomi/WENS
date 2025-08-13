@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>USD/CHF</title>
+<meta name="theme-color" content="#00ff88">
+<link rel="manifest" href="manifest.json">
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -26,15 +28,38 @@ body {
 .crypto-logo { width: 100px; height: 100px; object-fit: contain; }
 h1 { color: #00ff88; }
 p { color: #ccc; }
+.btn-3d {
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px #00994d;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 15px;
+}
+.btn-3d:active { transform: translateY(4px); box-shadow: 0 1px #00994d; }
 </style>
 </head>
 <body>
 
-<div class="header-card">
+<div class="header-card" role="region" aria-label="USD/CHF overview">
   <img src="images/forex/usdchf.png" alt="USD/CHF" class="crypto-logo">
   <h1>USD/CHF</h1>
   <p>Represents the exchange rate between the US Dollar and the Swiss Franc, a safe-haven currency pair.</p>
+  <a href="../forex.html" class="btn-3d">⬅ Back</a>
 </div>
+
+<script>
+  // Register service worker for PWA support
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('Service Worker registered:', reg.scope))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  }
+</script>
 
 </body>
 </html>

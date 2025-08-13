@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AUD/USD</title>
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Optional SEO / Social Sharing -->
+<meta name="description" content="AUD/USD currency pair: Australian Dollar vs US Dollar.">
+<meta property="og:title" content="AUD/USD">
+<meta property="og:description" content="Australian Dollar versus the US Dollar.">
+<meta property="og:image" content="images/forex/audusd.png">
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -35,6 +45,15 @@ p { color: #ccc; }
   <h1>AUD/USD</h1>
   <p>The Australian Dollar versus the United States Dollar, a key currency pair reflecting economic relations between Australia and the USA.</p>
 </div>
+
+<!-- ✅ Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.error('SW registration failed:', err));
+  }
+</script>
 
 </body>
 </html>

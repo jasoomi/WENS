@@ -37,7 +37,7 @@
     -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800;
   }
   .essay{ color:#dcdcdc; line-height:1.6; margin: 0 }
-  footer{ color:#9a9a9a; text-align:center; padding: 20px 12px 36px }
+  footer{ color: var(--muted); text-align:center; padding: 20px 12px 36px }
   .controls{ max-width:1100px; margin:10px auto 0; padding:0 12px; display:grid; gap:12px;
              grid-template-columns: 1fr 180px 160px; }
   .controls input, .controls select{
@@ -53,15 +53,15 @@
   <p class="lead">Each card auto‑generates a ~200‑word essay from the topic. Neon 3D style. Single file.</p>
 
   <div class="controls">
-    <input id="q" type="search" placeholder="Search topics…" />
-    <select id="cat">
+    <input id="q" type="search" placeholder="Search topics…" aria-label="Search topics" />
+    <select id="cat" aria-label="Filter by category">
       <option value="">All categories</option>
       <option>Governance</option><option>Economy</option><option>Society</option>
       <option>Science & Technology</option><option>International Relations</option>
       <option>Law & Justice</option><option>Environment</option><option>Education & Health</option>
       <option>Infrastructure</option><option>Culture</option>
     </select>
-    <select id="sort">
+    <select id="sort" aria-label="Sort topics">
       <option value="title">Sort: Title (A→Z)</option>
       <option value="cat">Sort: Category (A→Z)</option>
     </select>
@@ -72,7 +72,7 @@
 <footer>Tip: If you ever want fixed text instead of generated essays, tell me and I’ll embed the full content.</footer>
 
 <script>
-/* ---------- 1) Topics (100) with categories ---------- */
+/* ---------- Topics (100) ---------- */
 const TOPICS = [
   ["Democracy in Pakistan: Challenges and Prospects","Governance"],
   ["Good Governance and Public Service Delivery","Governance"],
@@ -178,9 +178,8 @@ const TOPICS = [
   ["Ethical Leadership and Integrity in Office","Governance"]
 ];
 
-/* ---------- 2) Essay generator (~200 words per topic) ---------- */
+/* ---------- Essay generator (~200 words per topic) ---------- */
 function generateEssay(topic){
-  // Build 10–12 crisp sentences that sum to roughly 190–220 words.
   const base = [
     `${topic} remains a recurring CSS theme because it connects institutions, markets, and society in Pakistan’s lived reality.`,
     `A high‑scoring introduction defines the concept, locates it in the constitutional and administrative framework, and explains why outcomes lag potential.`,
@@ -196,17 +195,16 @@ function generateEssay(topic){
   const angle = `In the context of ${topic.toLowerCase()}, credibility rises when reforms are co‑created with stakeholders, piloted at small scale, and adjusted through feedback loops that signal learning.`;
   const closer = `Conclude with three actionable recommendations and metrics for evaluation; this turns the essay into a practical policy memo rather than a generic opinion piece.`;
 
-  // Combine and trim to ~200 words
   let text = [...base, angle, closer].join(" ");
   let words = text.split(/\s+/);
   if (words.length > 220) { words = words.slice(0, 220); }
   while (words.length < 190) {
-    words.push("Clarity," , "coherence," , "and" , "Pakistan‑specific" , "examples" , "strengthen" , "both" , "analysis" , "and" , "presentation.");
+    words.push("Clarity,","coherence,","examples","strengthen","analysis.");
   }
   return words.join(" ");
 }
 
-/* ---------- 3) Rendering with neon gradient per card ---------- */
+/* ---------- Rendering with neon gradient per card ---------- */
 const wrap = document.getElementById('wrap');
 const q = document.getElementById('q');
 const cat = document.getElementById('cat');
@@ -244,7 +242,11 @@ function render(){
       </section>
     `;
   }).join("");
+
+  // Scroll to top of results on render
+  wrap.scrollIntoView({behavior:'smooth'});
 }
+
 q.addEventListener('input', render);
 cat.addEventListener('change', render);
 sortSel.addEventListener('change', render);
