@@ -356,3 +356,25 @@ if ('serviceWorker' in navigator) {
       .catch(err => console.log('Service Worker failed:', err));  
   });  
 }    </script>              
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      console.log('SW registered:', reg);
+
+      // Background sync registration
+      if ('sync' in reg) {
+        reg.sync.register('sync-forms');
+      }
+
+      // Periodic sync registration
+      if ('periodicSync' in reg) {
+        reg.periodicSync.register('update-content', {
+          minInterval: 24 * 60 * 60 * 1000 // once per day
+        });
+      }
+    }).catch(err => console.error('SW registration failed:', err));
+  });
+}
+</script>
