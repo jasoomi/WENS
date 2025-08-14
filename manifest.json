@@ -5,6 +5,9 @@
   "description": "A learning platform with resources, tools, and lessons.",
   "start_url": "/index.html",
   "scope": "/",
+  "scope_extensions": [
+    { "origin": "https://yourdomain.com" }
+  ],
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#C0C0C0",
@@ -13,6 +16,7 @@
   "dir": "ltr",
   "lang": "en",
   "categories": ["education", "learning", "tools"],
+  "iarc_rating_id": "TEMP-ID",
 
   "icons": [
     {
@@ -99,6 +103,15 @@
   ],
 
   "edge_side_panel": { "preferred_width": 380 },
+
+  "widgets": [
+    {
+      "name": "Latest Lessons",
+      "short_name": "Lessons",
+      "description": "Shows your newest content",
+      "url": "/widgets/lessons"
+    }
+  ],
 
   "screenshots": [
     {
