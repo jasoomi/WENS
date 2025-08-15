@@ -43,6 +43,39 @@ p { color: #ccc; }
   display: inline-block;
 }
 .btn-3d:active { transform: translateY(4px); box-shadow: 0 1px #00994d; }
+
+/* Current Affairs Cards */
+.current-affairs-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.current-card {
+  background: #222;
+  border-radius: 15px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+.current-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 255, 136, 0.5);
+}
+.current-card h3 {
+  color: #00ff88;
+  margin-top: 0;
+}
+.current-card p {
+  color: #ccc;
+}
+.highlight {
+  color: #ffdd00;
+  font-weight: bold;
+}
 </style>
 </head>
 <body>
@@ -50,10 +83,51 @@ p { color: #ccc; }
 <div class="header-card">
   <img src="flags/pk.png" alt="Pakistan Flag" class="crypto-logo">
   <h1>Pakistan</h1>
-  <p>News and developments from Pakistan covering politics, economy, and culture.</p>
+  <p>📰 Comprehensive current affairs from Pakistan covering politics, economy, society, foreign relations, health, technology, and sports.</p>
 </div>
 
 <a href="WorldCurrentAffairs.html" class="btn-3d">⬅ Back</a>
+
+<!-- Current Affairs Section -->
+<h2 style="color:#00ff88; margin-top:30px;">📌 Latest Current Affairs - Pakistan</h2>
+<div class="current-affairs-section">
+
+  <div class="current-card">
+    <h3>🏛️ Political Update</h3>
+    <p>The <span class="highlight">National Assembly</span> recently approved <span class="highlight">constitutional reforms</span> to enhance <span class="highlight">transparency</span> and <span class="highlight">good governance</span> across federal and provincial institutions. The <span class="highlight">Prime Minister</span> emphasized the need for <span class="highlight">accountability</span> and <span class="highlight">digital governance</span> systems to modernize administrative procedures.</p>
+  </div>
+
+  <div class="current-card">
+    <h3>💹 Economic News</h3>
+    <p>Pakistan's <span class="highlight">GDP growth</span> is projected to reach <span class="highlight">4.5%</span> this year, driven by increased <span class="highlight">foreign investment</span> in the <span class="highlight">energy</span> and <span class="highlight">technology</span> sectors. Inflation trends are being closely monitored, while new policies aim to promote <span class="highlight">small and medium enterprises</span> and strengthen <span class="highlight">export performance</span>.</p>
+  </div>
+
+  <div class="current-card">
+    <h3>🏫 Social Developments</h3>
+    <p>Recent initiatives focus on <span class="highlight">digital literacy</span>, <span class="highlight">women’s education</span>, and <span class="highlight">rural skill development</span>. Government programs aim to expand <span class="highlight">online learning platforms</span> and increase access to quality education across <span class="highlight">remote areas</span>.</p>
+  </div>
+
+  <div class="current-card">
+    <h3>🌐 Foreign Relations</h3>
+    <p>Pakistan signed <span class="highlight">bilateral agreements</span> with neighboring countries to enhance <span class="highlight">trade</span>, <span class="highlight">security cooperation</span>, and <span class="highlight">cultural exchanges</span>. Diplomatic efforts also include strengthening ties with <span class="highlight">Middle East</span> and <span class="highlight">Southeast Asian nations</span> for economic and strategic partnerships.</p>
+  </div>
+
+  <div class="current-card">
+    <h3>🩺 Health & Environment</h3>
+    <p>The government launched <span class="highlight">nationwide vaccination campaigns</span> and <span class="highlight">public health initiatives</span> to curb infectious diseases. Environmental policies target <span class="highlight">air pollution</span>, <span class="highlight">water sanitation</span>, and <span class="highlight">climate change adaptation</span> in major cities and vulnerable regions.</p>
+  </div>
+
+  <div class="current-card">
+    <h3>💻 Technology & Innovation</h3>
+    <p>Pakistan is fostering <span class="highlight">tech startups</span> with government <span class="highlight">grants</span> and <span class="highlight">innovation hubs</span>. Efforts include expanding <span class="highlight">software exports</span>, promoting <span class="highlight">IT education</span>, and supporting <span class="highlight">digital entrepreneurship</span>.</p>
+  </div>
+
+  <div class="current-card">
+    <h3>🏏 Sports Updates</h3>
+    <p>The <span class="highlight">Pakistan cricket</span> and <span class="highlight">hockey teams</span> announced new <span class="highlight">squads</span> for international tournaments. Upcoming <span class="highlight">friendly matches</span> and <span class="highlight">training camps</span> aim to improve performance and talent development.</p>
+  </div>
+
+</div>
 
 <!-- Service Worker -->
 <script>

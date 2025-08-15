@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprehensive Engineering Topics</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        text-align: center;
+        background: linear-gradient(45deg, #2c3e50, #2980b9);
+        color: #fff;
+        padding: 40px 20px;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px;
+        gap: 20px;
+    }
+
+    .card, .sub-card {
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .card:hover, .sub-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 10px 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .card h3, .sub-card h4 {
+        margin-top: 0;
+    }
+
+    .card p, .sub-card p, .sub-card ul {
+        font-size: 0.95em;
+        line-height: 1.5em;
+    }
+
+    .highlight { color: #ffeb3b; font-weight: bold; }
+    .subhighlight { color: #00ffff; font-weight: bold; }
+
+    /* Card Colors */
+    .mechanical { background-color: #e74c3c; width: 360px; }
+    .electrical { background-color: #f39c12; width: 360px; }
+    .civil { background-color: #3498db; width: 360px; }
+    .computer { background-color: #9b59b6; width: 360px; }
+    .chemical { background-color: #1abc9c; width: 360px; }
+    .aerospace { background-color: #e67e22; width: 360px; }
+    .environmental { background-color: #16a085; width: 360px; }
+    .industrial { background-color: #2980b9; width: 360px; }
+    .biomedical { background-color: #8e44ad; width: 360px; }
+    .energy { background-color: #c0392b; width: 360px; }
+
+    .sub-card { background-color: rgba(255,255,255,0.1); margin-top: 10px; padding: 15px; }
+
+    .icon { font-size: 1.5em; margin-right: 10px; vertical-align: middle; }
+
+</style>
+</head>
+<body>
+
+<header>🛠️ Comprehensive Engineering Topics ⚙️</header>
+
+<div class="cards-container">
+
+<!-- Mechanical Engineering -->
+<div class="card mechanical">
+    <h3>⚙️ <span class="highlight">Mechanical Engineering</span></h3>
+    <p><span class="subhighlight">Mechanical Engineering</span> is the study of machines, energy, and mechanics. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>🔥 Thermodynamics</h4>
+        <ul>
+            <li>Laws of Thermodynamics: Zeroth, First, Second, Third</li>
+            <li>Branches: Classical, Statistical, Chemical</li>
+            <li>Applications: Engines, HVAC, Power plants</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>💧 Fluid Mechanics</h4>
+        <ul>
+            <li>Branches: Hydrodynamics, Hydrostatics, Aerodynamics</li>
+            <li>Topics: Flow, Turbulence, Boundary layers</li>
+            <li>Applications: Pumps, turbines, pipelines</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🤖 Robotics & Automation</h4>
+        <ul>
+            <li>Branches: Industrial, Mobile, AI-based Robotics</li>
+            <li>Topics: Sensors, Actuators, Path Planning</li>
+            <li>Applications: Manufacturing, Automated vehicles</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🧱 Materials Science</h4>
+        <ul>
+            <li>Branches: Metallurgy, Polymers, Ceramics, Composites</li>
+            <li>Topics: Strength, Fatigue, Corrosion</li>
+            <li>Applications: Aerospace, Automotive, Structural design</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Electrical Engineering -->
+<div class="card electrical">
+    <h3>💡 <span class="highlight">Electrical & Electronics Engineering</span></h3>
+    <p>Deals with electricity, circuits, and electronic systems. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>⚡ Power Systems</h4>
+        <ul>
+            <li>Generation, Transmission, Distribution</li>
+            <li>Applications: Power plants, Smart grids</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🔌 Electronics</h4>
+        <ul>
+            <li>Semiconductors, Circuits, Devices</li>
+            <li>Applications: Consumer electronics, IoT</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🎛️ Control Systems</h4>
+        <ul>
+            <li>Automation, Feedback, Robotics</li>
+            <li>Applications: Industrial automation, Drones</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>📡 Signal Processing</h4>
+        <ul>
+            <li>Telecom, Audio/Video Processing</li>
+            <li>Applications: Communications, Radar</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Civil Engineering -->
+<div class="card civil">
+    <h3>🏗️ <span class="highlight">Civil Engineering</span></h3>
+    <p>Focuses on infrastructure, construction, and maintenance. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>🏢 Structural Engineering</h4>
+        <ul>
+            <li>Design of buildings, bridges, towers</li>
+            <li>Applications: Skyscrapers, Bridges</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🛤️ Transportation Engineering</h4>
+        <ul>
+            <li>Roads, Railways, Airports</li>
+            <li>Applications: Highway systems, Traffic management</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🌊 Hydraulics & Water Resources</h4>
+        <ul>
+            <li>Dams, Canals, Water Supply</li>
+            <li>Applications: Irrigation, Flood control</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🏞️ Geotechnical Engineering</h4>
+        <ul>
+            <li>Soil, Foundations, Tunnels</li>
+            <li>Applications: Building stability, Earthworks</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Computer Engineering -->
+<div class="card computer">
+    <h3>💻 <span class="highlight">Computer & Software Engineering</span></h3>
+    <p>Computing systems, software, and hardware design. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>💾 Software Engineering</h4>
+        <ul>
+            <li>Development, Testing, Maintenance</li>
+            <li>Applications: Apps, Systems software</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🤖 AI & Machine Learning</h4>
+        <ul>
+            <li>Intelligent Systems, Neural Networks</li>
+            <li>Applications: Robotics, Data analytics</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🛡️ Cybersecurity</h4>
+        <ul>
+            <li>Protecting Systems and Data</li>
+            <li>Applications: Networks, Financial systems</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>☁️ Networks & Cloud Computing</h4>
+        <ul>
+            <li>Communication Systems, Data Storage</li>
+            <li>Applications: Cloud services, IoT</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Chemical Engineering -->
+<div class="card chemical">
+    <h3>⚗️ <span class="highlight">Chemical Engineering</span></h3>
+    <p>Combines chemistry, physics, and biology for process design. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>🧪 Process Engineering</h4>
+        <ul>
+            <li>Chemical Processes, Industrial operations</li>
+            <li>Applications: Petrochemical plants, Refineries</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🔬 Material Science</h4>
+        <ul>
+            <li>Study of Materials and their properties</li>
+            <li>Applications: Polymers, Composites, Ceramics</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🧬 Biochemical Engineering</h4>
+        <ul>
+            <li>Biotechnology Processes</li>
+            <li>Applications: Pharmaceuticals, Bioreactors</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>⚠️ Process Safety & Control</h4>
+        <ul>
+            <li>Safety, Efficiency, Automation</li>
+            <li>Applications: Chemical plants, Hazard management</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Aerospace Engineering -->
+<div class="card aerospace">
+    <h3>✈️ <span class="highlight">Aerospace Engineering</span></h3>
+    <p>Aircraft and spacecraft design. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>🌬️ Aerodynamics</h4>
+        <ul>
+            <li>Airflow, Lift, Drag, Flight Mechanics</li>
+            <li>Applications: Aircraft, Drones, Rockets</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🚀 Propulsion</h4>
+        <ul>
+            <li>Engines, Rockets, Thrust systems</li>
+            <li>Applications: Aviation, Space travel</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>📡 Avionics</h4>
+        <ul>
+            <li>Aircraft Electronics, Navigation Systems</li>
+            <li>Applications: Flight control, Communication</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🛠️ Materials & Structures</h4>
+        <ul>
+            <li>Lightweight and durable components</li>
+            <li>Applications: Airframes, Spacecraft hulls</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Environmental Engineering -->
+<div class="card environmental">
+    <h3>🌱 <span class="highlight">Environmental Engineering</span></h3>
+    <p>Protecting and improving the environment. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>💧 Water & Wastewater Engineering</h4>
+        <ul>
+            <li>Water treatment, Distribution systems</li>
+            <li>Applications: Cities, Industries, Treatment plants</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🌫️ Pollution Control</h4>
+        <ul>
+            <li>Air, Water, Soil pollution management</li>
+            <li>Applications: Environmental monitoring, Clean energy</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🏡 Sustainable Design</h4>
+        <ul>
+            <li>Eco-friendly infrastructure, Renewable energy integration</li>
+            <li>Applications: Green buildings, Smart cities</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Industrial Engineering -->
+<div class="card industrial">
+    <h3>🏭 <span class="highlight">Industrial & Manufacturing Engineering</span></h3>
+    <p>Optimizing processes and systems. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>📈 Operations Research</h4>
+        <ul>
+            <li>Process optimization, Decision making</li>
+            <li>Applications: Supply chain, Logistics</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🚚 Supply Chain & Logistics</h4>
+        <ul>
+            <li>Material management, Distribution</li>
+            <li>Applications: Manufacturing, E-commerce</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>⚙️ Production Planning & Quality Control</h4>
+        <ul>
+            <li>Efficiency, Standards, Safety</li>
+            <li>Applications: Factories, Production lines</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Biomedical Engineering -->
+<div class="card biomedical">
+    <h3>🧬 <span class="highlight">Biomedical Engineering</span></h3>
+    <p>Combines engineering with medical sciences. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>🩺 Medical Devices & Instrumentation</h4>
+        <ul>
+            <li>Design of diagnostic and therapeutic devices</li>
+            <li>Applications: MRI, ECG, Surgical devices</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🦾 Prosthetics & Biomaterials</h4>
+        <ul>
+            <li>Artificial organs, Prosthetics, Biocompatible materials</li>
+            <li>Applications: Healthcare, Rehabilitation</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🖼️ Medical Imaging</h4>
+        <ul>
+            <li>MRI, CT scans, Ultrasound</li>
+            <li>Applications: Diagnostics, Treatment planning</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Energy Engineering -->
+<div class="card energy">
+    <h3>⚡ <span class="highlight">Petroleum & Energy Engineering</span></h3>
+    <p>Focuses on energy resources and extraction. Key topics:</p>
+
+    <div class="sub-card">
+        <h4>⛽ Petroleum Engineering</h4>
+        <ul>
+            <li>Reservoir, Drilling, Production</li>
+            <li>Applications: Oil & Gas industry</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>🔋 Renewable Energy</h4>
+        <ul>
+            <li>Solar, Wind, Hydropower, Geothermal</li>
+            <li>Applications: Power plants, Sustainable energy systems</li>
+        </ul>
+    </div>
+
+    <div class="sub-card">
+        <h4>⚙️ Energy Efficiency & Management</h4>
+        <ul>
+            <li>Optimization of energy consumption</li>
+            <li>Applications: Industries, Buildings, Transportation</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emerging Fields</title>
+<style>
+body {
+    background-color: #2f2f2f;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Search bar */
+#search-bar {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+}
+
+/* Header 3D Card */
+.header-card {
+    background: #fff;
+    color: #000;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.header-card:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Card wrapper */
+.card-wrapper {
+    perspective: 1200px;
+    margin-bottom: 40px;
+}
+
+/* Main cards */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.6s, max-height 0.5s, background 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 100px; 
+}
+.card.expanded {
+    max-height: 2000px;
+    background: linear-gradient(135deg, rgba(0,255,0,0.1), rgba(0,255,0,0.05));
+}
+.card-header {
+    font-size: 1.8em;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #000;
+}
+.card:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Subcards */
+.subcard {
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
+}
+.subcard:hover {
+    transform: rotateY(5deg) rotateX(3deg) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* AI & Data Science */
+.ai .subcard:nth-child(1) { background: #3498db; }
+.ai .subcard:nth-child(2) { background: #1abc9c; }
+.ai .subcard:nth-child(3) { background: #e67e22; }
+.ai .subcard:nth-child(4) { background: #9b59b6; }
+
+/* Blockchain */
+.blockchain .subcard:nth-child(1) { background: #f39c12; }
+.blockchain .subcard:nth-child(2) { background: #d35400; }
+.blockchain .subcard:nth-child(3) { background: #2980b9; }
+.blockchain .subcard:nth-child(4) { background: #27ae60; }
+
+/* Renewable Energy */
+.renewable .subcard:nth-child(1) { background: #2ecc71; }
+.renewable .subcard:nth-child(2) { background: #16a085; }
+.renewable .subcard:nth-child(3) { background: #e74c3c; }
+.renewable .subcard:nth-child(4) { background: #8e44ad; }
+
+/* Biotechnology */
+.biotech .subcard:nth-child(1) { background: #f1c40f; }
+.biotech .subcard:nth-child(2) { background: #c0392b; }
+.biotech .subcard:nth-child(3) { background: #34495e; }
+.biotech .subcard:nth-child(4) { background: #d35400; }
+
+/* Robotics & Automation */
+.robotics .subcard:nth-child(1) { background: #9b59b6; }
+.robotics .subcard:nth-child(2) { background: #e67e22; }
+.robotics .subcard:nth-child(3) { background: #1abc9c; }
+.robotics .subcard:nth-child(4) { background: #3498db; }
+</style>
+</head>
+<body>
+
+<input type="text" id="search-bar" placeholder="Search fields...">
+<div class="header-card">Emerging Fields</div>
+
+<!-- AI & Data Science -->
+<div class="card-wrapper ai">
+    <div class="card">
+        <div class="card-header">AI & Data Science</div>
+        <div class="subcard"><h3>Machine Learning</h3><p>Supervised, unsupervised, reinforcement learning.</p></div>
+        <div class="subcard"><h3>Deep Learning</h3><p>Neural networks, computer vision, NLP.</p></div>
+        <div class="subcard"><h3>Data Analytics</h3><p>Data collection, cleaning, visualization, predictive models.</p></div>
+        <div class="subcard"><h3>AI Ethics</h3><p>Fairness, transparency, responsible AI.</p></div>
+    </div>
+</div>
+
+<!-- Blockchain -->
+<div class="card-wrapper blockchain">
+    <div class="card">
+        <div class="card-header">Blockchain</div>
+        <div class="subcard"><h3>Cryptocurrency</h3><p>Bitcoin, Ethereum, digital currency transactions.</p></div>
+        <div class="subcard"><h3>Smart Contracts</h3><p>Self-executing contracts on blockchain networks.</p></div>
+        <div class="subcard"><h3>Decentralized Finance</h3><p>DeFi applications and platforms.</p></div>
+        <div class="subcard"><h3>Blockchain Security</h3><p>Consensus protocols, cryptography, attack prevention.</p></div>
+    </div>
+</div>
+
+<!-- Renewable Energy -->
+<div class="card-wrapper renewable">
+    <div class="card">
+        <div class="card-header">Renewable Energy</div>
+        <div class="subcard"><h3>Solar Power</h3><p>Photovoltaic systems, solar thermal tech.</p></div>
+        <div class="subcard"><h3>Wind Energy</h3><p>Wind turbines, offshore and onshore systems.</p></div>
+        <div class="subcard"><h3>Hydropower</h3><p>Energy from flowing water, dams, turbines.</p></div>
+        <div class="subcard"><h3>Energy Storage</h3><p>Batteries, supercapacitors, smart grids.</p></div>
+    </div>
+</div>
+
+<!-- Biotechnology -->
+<div class="card-wrapper biotech">
+    <div class="card">
+        <div class="card-header">Biotechnology</div>
+        <div class="subcard"><h3>Genetic Engineering</h3><p>CRISPR, gene therapy, GMOs.</p></div>
+        <div class="subcard"><h3>Biomedical Engineering</h3><p>Medical devices, diagnostics, prosthetics.</p></div>
+        <div class="subcard"><h3>Synthetic Biology</h3><p>Designing biological systems, microorganisms.</p></div>
+        <div class="subcard"><h3>Bioinformatics</h3><p>Computational biology, genomics, data analysis.</p></div>
+    </div>
+</div>
+
+<!-- Robotics & Automation -->
+<div class="card-wrapper robotics">
+    <div class="card">
+        <div class="card-header">Robotics & Automation</div>
+        <div class="subcard"><h3>Industrial Robotics</h3><p>Automated manufacturing, robotic arms, assembly lines.</p></div>
+        <div class="subcard"><h3>Autonomous Vehicles</h3><p>Self-driving cars, drones, navigation systems.</p></div>
+        <div class="subcard"><h3>AI in Robotics</h3><p>Intelligent decision-making, perception, path planning.</p></div>
+        <div class="subcard"><h3>Automation Systems</h3><p>Process automation, smart factories, IoT integration.</p></div>
+    </div>
+</div>
+
+<script>
+// Toggle expand/collapse
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('expanded');
+    });
+});
+
+// Search functionality
+document.getElementById('search-bar').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    document.querySelectorAll('.card-wrapper').forEach(wrapper => {
+        const header = wrapper.querySelector('.card-header').textContent.toLowerCase();
+        const subcards = wrapper.querySelectorAll('.subcard');
+        let match = header.includes(query);
+        subcards.forEach(sub => {
+            if(sub.textContent.toLowerCase().includes(query)) match = true;
+        });
+        wrapper.style.display = match ? '' : 'none';
+    });
+});
+</script>
+
+</body>
+</html>

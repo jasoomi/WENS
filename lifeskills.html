@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essential Life Skills</title>
+
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#2f2f2f">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192x192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+
+  <!-- (Your existing CSS here) -->
+</head>
+
+<body>
+  <!-- (Your existing body content here: search bar, header, cards, etc.) -->
+
+  <script>
+  // Your existing expand/search scripts here
+
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(reg => console.log('Service Worker registered', reg))
+        .catch(err => console.log('Service Worker failed', err));
+    });
+  }
+  </script>
+</body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essential Life Skills</title>
+<style>
+body {
+    background-color: #2f2f2f;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Search bar */
+#search-bar {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+}
+
+/* Header 3D Card */
+.header-card {
+    background: #fff;
+    color: #000;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.header-card:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Card wrapper */
+.card-wrapper {
+    perspective: 1200px;
+    margin-bottom: 40px;
+}
+
+/* Main cards */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+    transform-style: preserve-3d;
+    transition: transform 0.6s, max-height 0.5s, background 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 100px; 
+}
+.card.expanded {
+    max-height: 2000px;
+    background: linear-gradient(135deg, rgba(0,255,0,0.1), rgba(0,255,0,0.05));
+}
+.card-header {
+    font-size: 1.8em;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #000;
+}
+.card:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Subcards */
+.subcard {
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
+}
+.subcard:hover {
+    transform: rotateY(5deg) rotateX(3deg) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Communication subcards */
+.communication .subcard:nth-child(1) { background: #e74c3c; }
+.communication .subcard:nth-child(2) { background: #f39c12; }
+.communication .subcard:nth-child(3) { background: #3498db; }
+.communication .subcard:nth-child(4) { background: #2ecc71; }
+.communication .subcard:nth-child(5) { background: #9b59b6; }
+
+/* Time Management */
+.time-management .subcard:nth-child(1) { background: #1abc9c; }
+.time-management .subcard:nth-child(2) { background: #e67e22; }
+.time-management .subcard:nth-child(3) { background: #34495e; }
+.time-management .subcard:nth-child(4) { background: #16a085; }
+
+/* Financial */
+.financial .subcard:nth-child(1) { background: #d35400; }
+.financial .subcard:nth-child(2) { background: #c0392b; }
+.financial .subcard:nth-child(3) { background: #2980b9; }
+.financial .subcard:nth-child(4) { background: #27ae60; }
+
+/* Emotional */
+.emotional .subcard:nth-child(1) { background: #8e44ad; }
+.emotional .subcard:nth-child(2) { background: #f1c40f; }
+.emotional .subcard:nth-child(3) { background: #d35400; }
+.emotional .subcard:nth-child(4) { background: #2980b9; }
+
+/* Problem Solving */
+.problem-solving .subcard:nth-child(1) { background: #2c3e50; }
+.problem-solving .subcard:nth-child(2) { background: #e67e22; }
+.problem-solving .subcard:nth-child(3) { background: #16a085; }
+.problem-solving .subcard:nth-child(4) { background: #9b59b6; }
+</style>
+</head>
+<body>
+
+<input type="text" id="search-bar" placeholder="Search skills...">
+<div class="header-card">Essential Life Skills</div>
+
+<!-- Communication -->
+<div class="card-wrapper communication">
+    <div class="card">
+        <div class="card-header">Communication</div>
+        <div class="subcard"><h3>Verbal</h3><p>Clear speaking, tone, clarity, audience adaptation.</p></div>
+        <div class="subcard"><h3>Non-verbal</h3><p>Body language, gestures, facial expressions, eye contact.</p></div>
+        <div class="subcard"><h3>Written</h3><p>Emails, reports, clarity, grammar, structure.</p></div>
+        <div class="subcard"><h3>Visual</h3><p>Charts, diagrams, visual aids to explain ideas.</p></div>
+        <div class="subcard"><h3>Listening</h3><p>Active listening improves understanding & trust.</p></div>
+    </div>
+</div>
+
+<!-- Time Management -->
+<div class="card-wrapper time-management">
+    <div class="card">
+        <div class="card-header">Time Management</div>
+        <div class="subcard"><h3>Prioritization</h3><p>Focus on important tasks first.</p></div>
+        <div class="subcard"><h3>Planning</h3><p>Organize tasks and deadlines efficiently.</p></div>
+        <div class="subcard"><h3>Delegation</h3><p>Assign tasks to others effectively.</p></div>
+        <div class="subcard"><h3>Avoiding Procrastination</h3><p>Manage distractions and stay productive.</p></div>
+    </div>
+</div>
+
+<!-- Financial Skills -->
+<div class="card-wrapper financial">
+    <div class="card">
+        <div class="card-header">Financial Skills</div>
+        <div class="subcard"><h3>Budgeting</h3><p>Plan income and expenses carefully.</p></div>
+        <div class="subcard"><h3>Saving</h3><p>Build financial security over time.</p></div>
+        <div class="subcard"><h3>Investing</h3><p>Grow money through smart investments.</p></div>
+        <div class="subcard"><h3>Debt Management</h3><p>Manage loans and credit responsibly.</p></div>
+    </div>
+</div>
+
+<!-- Emotional Skills -->
+<div class="card-wrapper emotional">
+    <div class="card">
+        <div class="card-header">Emotional Skills</div>
+        <div class="subcard"><h3>Self-awareness</h3><p>Understand your emotions and triggers.</p></div>
+        <div class="subcard"><h3>Self-regulation</h3><p>Control impulses and emotional reactions.</p></div>
+        <div class="subcard"><h3>Empathy</h3><p>Understand and share feelings of others.</p></div>
+        <div class="subcard"><h3>Social Skills</h3><p>Build strong interpersonal relationships.</p></div>
+    </div>
+</div>
+
+<!-- Problem Solving -->
+<div class="card-wrapper problem-solving">
+    <div class="card">
+        <div class="card-header">Problem Solving</div>
+        <div class="subcard"><h3>Identify Problem</h3><p>Recognize issues accurately.</p></div>
+        <div class="subcard"><h3>Analyze</h3><p>Break down problem into parts.</p></div>
+        <div class="subcard"><h3>Develop Solutions</h3><p>Generate multiple approaches to solve.</p></div>
+        <div class="subcard"><h3>Implement & Review</h3><p>Take action and evaluate results.</p></div>
+    </div>
+</div>
+
+<script>
+// Toggle expand/collapse
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('expanded');
+    });
+});
+
+// Search functionality
+document.getElementById('search-bar').addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    document.querySelectorAll('.card-wrapper').forEach(wrapper => {
+        const header = wrapper.querySelector('.card-header').textContent.toLowerCase();
+        const subcards = wrapper.querySelectorAll('.subcard');
+        let match = header.includes(query);
+        subcards.forEach(sub => {
+            if(sub.textContent.toLowerCase().includes(query)) match = true;
+        });
+        wrapper.style.display = match ? '' : 'none';
+    });
+});
+</script>
+
+</body>
+</html>

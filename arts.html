@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art & Creativity Categories</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        text-align: center;
+        background: linear-gradient(45deg, #8e44ad, #3498db);
+        color: #fff;
+        padding: 40px 20px;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .search-container {
+        text-align: center;
+        margin: 20px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 20px;
+        border: 2px solid #ccc;
+        font-size: 16px;
+    }
+
+    .filter-buttons {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .filter-buttons button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #e67e22;
+        color: #fff;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+    .filter-buttons button:hover {
+        background-color: #d35400;
+    }
+
+    .back-button {
+        text-align: center;
+        margin: 10px;
+    }
+    .back-button button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        background-color: #27ae60;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+    .back-button button:hover {
+        background-color: #1e8449;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px;
+        gap: 20px;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        width: 300px;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        color: #fff;
+        position: relative;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 10px 10px 25px rgba(0,0,0,0.4);
+    }
+    .card h3 {
+        margin-top: 0;
+        font-size: 1.5em;
+    }
+    .card p {
+        font-size: 1em;
+        line-height: 1.4em;
+    }
+    .highlight {
+        color: #ffeb3b;
+        font-weight: bold;
+    }
+    .subhighlight {
+        color: #00ffff;
+        font-weight: bold;
+    }
+
+    /* Card Colors */
+    .visual { background-color: #e74c3c; }
+    .performing { background-color: #f39c12; }
+    .digital { background-color: #3498db; }
+    .literary { background-color: #9b59b6; }
+    .applied { background-color: #1abc9c; }
+
+    .creative-thinking { background-color: #d35400; }
+    .design { background-color: #16a085; }
+    .tech-innovation { background-color: #2980b9; }
+    .cultural { background-color: #8e44ad; }
+    .creative-entrepreneur { background-color: #c0392b; }
+
+    .icon {
+        font-size: 2em;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+</style>
+</head>
+<body>
+
+<header>🎨 Art & Creativity Categories ✨</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search topics...">
+</div>
+
+<div class="filter-buttons">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('art')">Art</button>
+    <button onclick="filterCategory('creativity')">Creativity</button>
+</div>
+
+<div class="back-button">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'});">🔝 Back to Top</button>
+</div>
+
+<div class="cards-container">
+
+    <!-- Art Cards -->
+    <div class="card visual" data-category="art">
+        <h3>🖌️ <span class="highlight">Visual Arts</span></h3>
+        <p>Includes <span class="subhighlight">painting</span>, <span class="subhighlight">drawing</span>, <span class="subhighlight">sculpture</span>, and <span class="subhighlight">photography</span>. Visual arts allow artists to express ideas and emotions through colors, shapes, and forms. Digital painting and photography expand traditional techniques.</p>
+    </div>
+
+    <div class="card performing" data-category="art">
+        <h3>💃 <span class="highlight">Performing Arts</span></h3>
+        <p>Covers <span class="subhighlight">dance</span>, <span class="subhighlight">theatre</span>, <span class="subhighlight">acting</span>, and <span class="subhighlight">music performance</span>. Performing arts focus on live or recorded artistic expression through movement, voice, and instruments.</p>
+    </div>
+
+    <div class="card digital" data-category="art">
+        <h3>💻 <span class="highlight">Digital & Media Arts</span></h3>
+        <p>Involves <span class="subhighlight">graphic design</span>, <span class="subhighlight">animation</span>, <span class="subhighlight">motion graphics</span>, and <span class="subhighlight">video production</span>. Digital arts use technology to create visual storytelling and interactive media.</p>
+    </div>
+
+    <div class="card literary" data-category="art">
+        <h3>📖 <span class="highlight">Literary Arts</span></h3>
+        <p>Focuses on <span class="subhighlight">creative writing</span>, <span class="subhighlight">scriptwriting</span>, and <span class="subhighlight">storytelling</span>. Literary arts explore narratives, emotions, and culture through words and scripts.</p>
+    </div>
+
+    <div class="card applied" data-category="art">
+        <h3>🎨 <span class="highlight">Applied & Decorative Arts</span></h3>
+        <p>Includes <span class="subhighlight">fashion design</span>, <span class="subhighlight">interior design</span>, <span class="subhighlight">crafts</span>, and <span class="subhighlight">handmade art</span>. Applied arts combine creativity and functionality.</p>
+    </div>
+
+    <!-- Creativity Cards -->
+    <div class="card creative-thinking" data-category="creativity">
+        <h3>💡 <span class="highlight">Creative Thinking & Problem Solving</span></h3>
+        <p>Focuses on <span class="subhighlight">brainstorming</span>, <span class="subhighlight">lateral thinking</span>, and <span class="subhighlight">mind mapping</span>. Encourages innovation in business, design, and daily life.</p>
+    </div>
+
+    <div class="card design" data-category="creativity">
+        <h3>🎨 <span class="highlight">Design & Concept Development</span></h3>
+        <p>Involves <span class="subhighlight">product design</span>, <span class="subhighlight">industrial design</span>, <span class="subhighlight">UI/UX design</span>, and <span class="subhighlight">prototyping</span>. Creativity turns ideas into tangible solutions.</p>
+    </div>
+
+    <div class="card tech-innovation" data-category="creativity">
+        <h3>🤖 <span class="highlight">Innovation in Technology</span></h3>
+        <p>Includes <span class="subhighlight">digital art tools</span>, <span class="subhighlight">AI-generated art</span>, <span class="subhighlight">3D printing</span>, and <span class="subhighlight">creative coding</span>. Technology expands creative possibilities.</p>
+    </div>
+
+    <div class="card cultural" data-category="creativity">
+        <h3>🌍 <span class="highlight">Cultural & Artistic Innovation</span></h3>
+        <p>Explores modern reinterpretation of <span class="subhighlight">traditional arts</span>, <span class="subhighlight">fusion arts</span>, <span class="subhighlight">experimental music</span>, and <span class="subhighlight">multimedia projects</span>.</p>
+    </div>
+
+    <div class="card creative-entrepreneur" data-category="creativity">
+        <h3>💼 <span class="highlight">Creative Entrepreneurship</span></h3>
+        <p>Focuses on monetizing <span class="subhighlight">art</span> and <span class="subhighlight">creative skills</span>. Covers <span class="subhighlight">art marketing</span>, galleries, digital platforms, and NFTs.</p>
+    </div>
+
+</div>
+
+<script>
+    function filterCards() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            let cardText = cards[i].innerText.toLowerCase();
+            cards[i].style.display = cardText.includes(input) ? '' : 'none';
+        }
+    }
+
+    function filterCategory(category) {
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            if (category === 'all' || cards[i].dataset.category === category) {
+                cards[i].style.display = '';
+            } else {
+                cards[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

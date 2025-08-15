@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business & Economics Topics</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        text-align: center;
+        background: linear-gradient(45deg, #ff6a00, #ee0979);
+        color: #fff;
+        padding: 40px 20px;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .search-container {
+        text-align: center;
+        margin: 20px;
+    }
+    input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 20px;
+        border: 2px solid #ccc;
+        font-size: 16px;
+    }
+
+    .filter-buttons {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .filter-buttons button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #007BFF;
+        color: #fff;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    .filter-buttons button:hover {
+        background-color: #0056b3;
+    }
+
+    .back-button {
+        text-align: center;
+        margin: 10px;
+    }
+    .back-button button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        background-color: #28a745;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    .back-button button:hover {
+        background-color: #1e7e34;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px;
+        gap: 20px;
+    }
+
+    /* 3D-style Cards */
+    .card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        width: 280px;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        color: #fff;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 10px 10px 25px rgba(0,0,0,0.4);
+    }
+    .card h3 {
+        margin-top: 0;
+    }
+
+    /* Card Colors */
+    .business { background-color: #FFD700; }
+    .management { background-color: #32CD32; }
+    .marketing { background-color: #FF4500; }
+    .finance { background-color: #FF8C00; }
+    .ecommerce { background-color: #1E90FF; }
+
+    .micro { background-color: #FF69B4; }
+    .macro { background-color: #8A2BE2; }
+    .international { background-color: #00CED1; }
+    .development { background-color: #FF1493; }
+    .behavioral { background-color: #20B2AA; }
+
+</style>
+</head>
+<body>
+
+<header>Business & Economics Topics</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search topics...">
+</div>
+
+<div class="filter-buttons">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('business')">Business</button>
+    <button onclick="filterCategory('economics')">Economics</button>
+</div>
+
+<div class="back-button">
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'});">Back to Top</button>
+</div>
+
+<div class="cards-container">
+
+    <!-- Business Cards -->
+    <div class="card business" data-category="business">
+        <h3>Entrepreneurship & Startups</h3>
+        <p>Focuses on starting new businesses and managing them efficiently. Includes business planning, funding strategies, market research, and scaling startups.</p>
+    </div>
+
+    <div class="card management" data-category="business">
+        <h3>Management & Leadership</h3>
+        <p>Involves guiding teams and organizations to achieve goals. Includes strategic planning, operations management, project management, and decision-making skills.</p>
+    </div>
+
+    <div class="card marketing" data-category="business">
+        <h3>Marketing & Sales</h3>
+        <p>Covers strategies for promoting products and services. Includes digital marketing, branding, advertising, and sales techniques to increase revenue.</p>
+    </div>
+
+    <div class="card finance" data-category="business">
+        <h3>Finance & Accounting</h3>
+        <p>Deals with money management within businesses. Covers corporate finance, investment strategies, accounting principles, budgeting, taxation, and financial analysis.</p>
+    </div>
+
+    <div class="card ecommerce" data-category="business">
+        <h3>E-commerce & Retail</h3>
+        <p>Focuses on selling goods and services online or offline. Includes online business models, supply chain management, customer relationship management (CRM), and retail operations.</p>
+    </div>
+
+    <!-- Economics Cards -->
+    <div class="card micro" data-category="economics">
+        <h3>Microeconomics</h3>
+        <p>Studies individual and business decision-making. Covers supply & demand, market structures, consumer behavior, and production costs.</p>
+    </div>
+
+    <div class="card macro" data-category="economics">
+        <h3>Macroeconomics</h3>
+        <p>Examines the overall economy. Includes GDP, inflation, unemployment, fiscal & monetary policy, and economic growth.</p>
+    </div>
+
+    <div class="card international" data-category="economics">
+        <h3>International Economics</h3>
+        <p>Explores global trade and financial systems. Topics include trade policies, exchange rates, balance of payments, and globalization.</p>
+    </div>
+
+    <div class="card development" data-category="economics">
+        <h3>Development Economics</h3>
+        <p>Studies improving living standards in emerging countries. Focuses on poverty, inequality, sustainable development, and economic growth strategies.</p>
+    </div>
+
+    <div class="card behavioral" data-category="economics">
+        <h3>Behavioral Economics</h3>
+        <p>Examines how psychology affects economic decisions. Studies biases, heuristics, nudges, and consumer behavior to understand decision-making.</p>
+    </div>
+
+</div>
+
+<script>
+    function filterCards() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            let cardText = cards[i].innerText.toLowerCase();
+            cards[i].style.display = cardText.includes(input) ? '' : 'none';
+        }
+    }
+
+    function filterCategory(category) {
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            if (category === 'all' || cards[i].dataset.category === category) {
+                cards[i].style.display = '';
+            } else {
+                cards[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
